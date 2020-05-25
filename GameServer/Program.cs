@@ -170,7 +170,8 @@ namespace GameServer
                         {
                             type = MESSAGE_TYPE_GET_USER_SUCCESS,
                             userId = reader.GetInt32(reader.GetOrdinal("idPlayer")),
-                            userName = reader.GetString(reader.GetOrdinal("name"))
+                            userName = reader.GetString(reader.GetOrdinal("username")),
+                            name = reader.GetString(reader.GetOrdinal("name"))
                         };
                     }
                     else
@@ -269,7 +270,7 @@ namespace GameServer
             return result;
         }
 
-        static bool InsertMessage(int userId, string messageText)
+        static bool InsertMessage(int idPlayer, string messageText)
         {
             bool result = false;
 
@@ -281,9 +282,9 @@ namespace GameServer
 
                     SqlCommand sqlCommand = connection.CreateCommand();
 
-                    sqlCommand.CommandText = "INSERT INTO [message] (userId, text, dateTime) values (@userId, @text, CURRENT_TIMESTAMP)";
+                    sqlCommand.CommandText = "INSERT INTO [message] (idPlayer, text, dateTime) values (@idPlayer, @text, CURRENT_TIMESTAMP)";
 
-                    sqlCommand.Parameters.Add(new SqlParameter("userId", userId));
+                    sqlCommand.Parameters.Add(new SqlParameter("idPlayer", idPlayer));
                     sqlCommand.Parameters.Add(new SqlParameter("text", messageText));
 
                     sqlCommand.ExecuteNonQuery();
@@ -315,9 +316,12 @@ namespace GameServer
 
                     sqlCommand.CommandText = @"
 						SELECT 
-						usr.name AS 'userName', 
+                        plr.idPlayer,
+						plr.name AS 'name', 
+                        plr.userName,
+                        msg.dateTime,
 						msg.text
-						FROM [message] msg JOIN [user] usr ON usr.id = msg.userId 
+						FROM [message] msg JOIN [player] plr ON plr.idPlayer = msg.idPlayer 
 						ORDER BY msg.dateTime
 					";
 
@@ -329,13 +333,15 @@ namespace GameServer
                         {
                             type = MESSAGE_TYPE_READ_NEW_MESSAGE,
                             userName = reader.GetString(reader.GetOrdinal("userName")),
+                            namePlayer = reader.GetString(reader.GetOrdinal("name")),
+                            dateTime = reader.GetDateTime(reader.GetOrdinal("dateTime")).ToString("dd/MM/yyyy HH:mm:ss"),
                             messageText = reader.GetString(reader.GetOrdinal("text"))
                         });
                     }
 
                     connection.Close();
                 }
-                catch
+                catch (Exception ex)
                 {
                     result.Clear();
                 }
@@ -371,6 +377,8 @@ namespace GameServer
                     case MESSAGE_TYPE_SEND_NEW_MESSAGE:
                         int userIdNewMsg = message.GetInt32("userId");
                         string userName = message.GetString("userName");
+                        string namePlayer = message.GetString("namePlayer");
+                        string dateTime = message.GetString("dateTime");
                         string messageText = message.GetString("messageText");
 
                         if (InsertMessage(userIdNewMsg, messageText) == true)
@@ -381,6 +389,8 @@ namespace GameServer
                                 {
                                     type = MESSAGE_TYPE_READ_NEW_MESSAGE,
                                     userName,
+                                    namePlayer,
+                                    dateTime,
                                     messageText
                                 });
                             }

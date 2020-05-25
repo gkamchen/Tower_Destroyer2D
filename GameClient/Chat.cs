@@ -1,70 +1,115 @@
 ﻿using System;
+using System.Drawing;
 using System.Windows.Forms;
 using GameClient.EventArgs;
 
 namespace GameClient
 {
-	public partial class Chat : Form
-	{
-		private event EventHandler BtnSendOnClick;
-		private delegate void SetVisibleDelegate(bool visible);
-		private delegate void WriteMessageDelegate(string userName, string messageText);
+    public partial class Chat : Form
+    {
+        private string Name { get; set; }
+        private event EventHandler BtnSendOnClick;
+        private delegate void SetVisibleDelegate(bool visible, string name);
+        private delegate void WriteMessageDelegate(string name, string dateTime, string messageText);
 
-		public Chat(EventHandler BtnSendOnClick)
-		{
-			InitializeComponent();
+        public Chat(EventHandler BtnSendOnClick)
+        {
+            InitializeComponent();
 
-			this.BtnSendOnClick = BtnSendOnClick;
-		}
+            this.BtnSendOnClick = BtnSendOnClick;
+        }
 
-		private void btnSend_Click(object sender, System.EventArgs e)
-		{
-			if (this.BtnSendOnClick != null)
-			{
-				this.BtnSendOnClick.Invoke(this, new BtnSendOnClickEventArgs()
-				{
-					MessageText = this.txtMessage.Text
-				});
+        private void btnSend_Click(object sender, System.EventArgs e)
+        {
+            if (this.BtnSendOnClick != null)
+            {
+                this.BtnSendOnClick.Invoke(this, new BtnSendOnClickEventArgs()
+                {
+                    MessageText = this.txtMessage.Text
+                });
 
-				this.txtMessage.Clear();
-			}
-		}
+                this.txtMessage.Clear();
+            }
+        }
 
-		public void SetVisible(bool visible)
-		{
-			if (this.InvokeRequired == true)
-			{
-				this.Invoke(new SetVisibleDelegate(SetVisible), new object[]
-				{
-					visible
-				});
-			}
-			else
-			{
-				this.Visible = visible;
-			}
-		}
+        public void SetVisible(bool visible, string name)
+        {
+            if (this.InvokeRequired == true)
+            {
+                this.Invoke(new SetVisibleDelegate(SetVisible), new object[]
+                {
+                    visible,
+                    name
+                });
+            }
+            else
+            {
+                this.Visible = visible;
+                this.Name = name;
 
-		public void WriteMessage(string userName, string messageText)
-		{
-			if (this.InvokeRequired == true)
-			{
-				this.Invoke(new WriteMessageDelegate(WriteMessage), new object[]
-				{
-					userName,
-					messageText
-				});
-			}
-			else
-			{
-				this.txtHistory.AppendText($"{userName}: {messageText}");
-				this.txtHistory.AppendText(Environment.NewLine);
-			}
-		}
+                lblName.Text = this.Name;
+            }
+        }
 
-		private void txtMessage_TextChanged(object sender, System.EventArgs e)
-		{
-			btnSend.Enabled = txtMessage.Text.Trim() != String.Empty;
-		}
-	}
+        public void WriteMessage(string name, string dateTime, string messageText)
+        {
+            if (this.InvokeRequired == true)
+            {
+                this.Invoke(new WriteMessageDelegate(WriteMessage), new object[]
+                {
+                    name,
+                    dateTime,
+                    messageText
+                });
+            }
+            else
+            {
+                TextAlingtment(messageText, dateTime, name);
+                //this.rtxtHistory.AppendText($"{name} - {dateTime}: {messageText}");
+                //this.rtxtHistory.AppendText(Environment.NewLine);
+            }
+        }
+        private void TextAlingtment(string msg,string dateTime, string name)
+        {
+
+            if (name == this.Name)
+            {
+                rtxtHistory.SelectionAlignment = HorizontalAlignment.Right;
+                rtxtHistory.Refresh();
+
+                rtxtHistory.SelectionColor = Color.DarkKhaki;
+                rtxtHistory.SelectionFont = new Font("Comic Sans MS", 10, FontStyle.Bold);
+                
+                rtxtHistory.AppendText(Environment.NewLine + $"{msg}");
+
+                rtxtHistory.SelectionColor = Color.Pink;
+                rtxtHistory.SelectionFont = new Font("Comic Sans MS", 8);
+              // rtxtHistory.SelectionAlignment = HorizontalAlignment.Right;
+                rtxtHistory.AppendText(Environment.NewLine + $"{dateTime}");
+                rtxtHistory.Refresh();
+            }
+            else
+            {
+                rtxtHistory.SelectionAlignment = HorizontalAlignment.Left;
+                rtxtHistory.Refresh();
+
+                rtxtHistory.SelectionColor = Color.Green;
+                rtxtHistory.SelectionFont = new Font("Comic Sans MS", 10, FontStyle.Bold);
+                //rtxtHistory.SelectionAlignment = HorizontalAlignment.Left;
+                rtxtHistory.AppendText(Environment.NewLine + $"{name}: {msg}");
+
+                rtxtHistory.SelectionColor = Color.Green;
+                rtxtHistory.SelectionFont = new Font("Comic Sans MS", 8);
+                //rtxtHistory.SelectionAlignment = HorizontalAlignment.Left;
+                rtxtHistory.AppendText(Environment.NewLine + $"{dateTime}");
+                rtxtHistory.Refresh();
+            }
+            
+        }
+
+        private void txtMessage_TextChanged(object sender, System.EventArgs e)
+        {
+            btnSend.Enabled = txtMessage.Text.Trim() != String.Empty;
+        }
+    }
 }

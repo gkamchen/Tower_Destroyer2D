@@ -2,6 +2,7 @@
 using System.Windows.Forms;
 using GameClient.EventArgs;
 using GameClient;
+using System;
 
 namespace GameClient
 {
@@ -30,15 +31,19 @@ namespace GameClient
 
 		private int userId;
 		private string userName;
+		private string name;
 		private Client client;
 		private Login login;
 		private Register register;
 		private Recovery recovery;
 		private Chat chat;
 
+		private delegate void SetVisibleMenuBarDelegate(bool visible);
+
 		public Main()
 		{
 			InitializeComponent();
+			menuBar.Visible = false;
 		}
 
 		protected override void OnClosed(System.EventArgs e)
@@ -49,6 +54,20 @@ namespace GameClient
 			}
 
 			base.OnClosed(e);
+		}
+		public void SetVisibleMenuBar(bool visible)
+		{
+			if (this.InvokeRequired == true)
+			{
+				this.Invoke(new SetVisibleMenuBarDelegate(SetVisibleMenuBar), new object[]
+				{
+					visible
+				});
+			}
+			else
+			{
+				this.menuBar.Visible = visible;
+			}
 		}
 
 		private void Main_Load(object sender, System.EventArgs e)
@@ -179,8 +198,10 @@ namespace GameClient
 					type = MESSAGE_TYPE_SEND_NEW_MESSAGE,
 					userId = this.userId,
 					userName = this.userName,
+					namePlayer = this.name,
+					dateTime = DateTime.Now.ToString("dd/MM/yyyy HH:mm:ss"),
 					messageText = btnSendOnClickEventArgs.MessageText
-				});
+				}) ;
 			}
 		}
 
@@ -200,9 +221,11 @@ namespace GameClient
 						if (this.chat != null)
 						{
 							string userName = message.GetString("userName");
+							string namePlayer = message.GetString("namePlayer");
+							string dateTime = message.GetString("dateTime");
 							string messageText = message.GetString("messageText");
 
-							this.chat.WriteMessage(userName, messageText);
+							this.chat.WriteMessage(namePlayer,dateTime, messageText);
 						}
 						break;
 					case MESSAGE_TYPE_GET_USER_SUCCESS:
@@ -210,10 +233,14 @@ namespace GameClient
 						{
 							this.userId = message.GetInt32("userId");
 							this.userName = message.GetString("userName");
+							this.name = message.GetString("name");
 
 							this.login.Clear();
 							this.login.SetVisible(false);
-							this.chat.SetVisible(true);
+							//Chamar chat direto
+							this.chat.SetVisible(true, this.name);
+
+							this.SetVisibleMenuBar(true);
 
 							this.client.SendMessage(new
 							{
@@ -246,6 +273,27 @@ namespace GameClient
 						break;
 				}
 			}
+		}
+		
+		private void chatToolStripMenuItem_Click(object sender, System.EventArgs e)
+		{
+			this.chat.SetVisible(true, this.name);
+			this.login.Visible = false;
+			this.register.Visible = false;
+		}
+
+		private void jogarToolStripMenuItem_Click(object sender, System.EventArgs e)
+		{
+			MessageBox.Show("Ainda não funciona Pituzin, tenha calma, um dia funcionará!");
+		}
+
+		private void sairToolStripMenuItem_Click(object sender, System.EventArgs e)
+		{
+			this.login.Visible = true;
+			this.register.Visible = false;
+			this.chat.Visible = false;
+			this.recovery.Visible = false;
+			this.menuBar.Visible = false;
 		}
 	}
 }
