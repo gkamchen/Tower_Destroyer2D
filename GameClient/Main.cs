@@ -289,6 +289,7 @@ namespace GameClient
 
 		private void sairToolStripMenuItem_Click(object sender, System.EventArgs e)
 		{
+			this.chat.rtxtHistory.Text = "";
 			this.login.Visible = true;
 			this.register.Visible = false;
 			this.chat.Visible = false;

@@ -77,34 +77,44 @@ namespace GameClient
                 rtxtHistory.SelectionAlignment = HorizontalAlignment.Right;
                 rtxtHistory.Refresh();
 
-                rtxtHistory.SelectionColor = Color.DarkKhaki;
-                rtxtHistory.SelectionFont = new Font("Comic Sans MS", 10, FontStyle.Bold);
+                rtxtHistory.SelectionColor = Color.BlueViolet;
+                rtxtHistory.SelectionFont = new Font("Comic Sans MS", 8, FontStyle.Bold);
                 
                 rtxtHistory.AppendText(Environment.NewLine + $"{msg}");
 
-                rtxtHistory.SelectionColor = Color.Pink;
-                rtxtHistory.SelectionFont = new Font("Comic Sans MS", 8);
-              // rtxtHistory.SelectionAlignment = HorizontalAlignment.Right;
+                rtxtHistory.SelectionColor = Color.BlueViolet;
+                rtxtHistory.SelectionFont = new Font("Comic Sans MS", 6);
+                rtxtHistory.SelectionAlignment = HorizontalAlignment.Right;
                 rtxtHistory.AppendText(Environment.NewLine + $"{dateTime}");
+                
                 rtxtHistory.Refresh();
+                rtxtHistory.SelectionAlignment = HorizontalAlignment.Right;
+                rtxtHistory.ScrollToCaret();
+                rtxtHistory.AppendText(Environment.NewLine);
             }
-            else
+            if (name != this.Name)
             {
+              
                 rtxtHistory.SelectionAlignment = HorizontalAlignment.Left;
                 rtxtHistory.Refresh();
 
                 rtxtHistory.SelectionColor = Color.Green;
-                rtxtHistory.SelectionFont = new Font("Comic Sans MS", 10, FontStyle.Bold);
+                rtxtHistory.SelectionFont = new Font("Comic Sans MS", 8, FontStyle.Bold);
                 //rtxtHistory.SelectionAlignment = HorizontalAlignment.Left;
                 rtxtHistory.AppendText(Environment.NewLine + $"{name}: {msg}");
 
                 rtxtHistory.SelectionColor = Color.Green;
-                rtxtHistory.SelectionFont = new Font("Comic Sans MS", 8);
+                rtxtHistory.SelectionFont = new Font("Comic Sans MS", 6);
                 //rtxtHistory.SelectionAlignment = HorizontalAlignment.Left;
                 rtxtHistory.AppendText(Environment.NewLine + $"{dateTime}");
                 rtxtHistory.Refresh();
+                rtxtHistory.ScrollToCaret();
+
+                rtxtHistory.AppendText(Environment.NewLine);
             }
-            
+            rtxtHistory.SelectionStart = rtxtHistory.Text.Length;
+            rtxtHistory.ScrollToCaret();
+
         }
 
         private void txtMessage_TextChanged(object sender, System.EventArgs e)

@@ -68,6 +68,7 @@
             this.rtxtHistory.Location = new System.Drawing.Point(11, 28);
             this.rtxtHistory.Margin = new System.Windows.Forms.Padding(2);
             this.rtxtHistory.Name = "rtxtHistory";
+            this.rtxtHistory.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.Horizontal;
             this.rtxtHistory.Size = new System.Drawing.Size(506, 225);
             this.rtxtHistory.TabIndex = 4;
             this.rtxtHistory.Text = "";
@@ -95,7 +96,7 @@
 		private System.Windows.Forms.TextBox txtMessage;
 		private System.Windows.Forms.Button btnSend;
         private System.Windows.Forms.Label lblName;
-        private System.Windows.Forms.RichTextBox rtxtHistory;
+        public System.Windows.Forms.RichTextBox rtxtHistory;
     }
 }
 
