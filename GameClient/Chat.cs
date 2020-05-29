@@ -7,7 +7,7 @@ namespace GameClient
 {
     public partial class Chat : Form
     {
-        private string Name { get; set; }
+        public string Name { get; set; }
         private event EventHandler BtnSendOnClick;
         private delegate void SetVisibleDelegate(bool visible, string name);
         private delegate void WriteMessageDelegate(string name, string dateTime, string messageText);

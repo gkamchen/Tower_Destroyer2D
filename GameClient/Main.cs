@@ -238,14 +238,11 @@ namespace GameClient
 							this.login.Clear();
 							this.login.SetVisible(false);
 							//Chamar chat direto
-							this.chat.SetVisible(true, this.name);
+							//this.chat.SetVisible(true, this.name);  // Comentado
 
 							this.SetVisibleMenuBar(true);
 
-							this.client.SendMessage(new
-							{
-								type = MESSAGE_TYPE_GET_MESSAGES
-							});
+							
 						}
 						break;
 					case MESSAGE_TYPE_GET_USER_ERROR:
@@ -277,9 +274,23 @@ namespace GameClient
 		
 		private void chatToolStripMenuItem_Click(object sender, System.EventArgs e)
 		{
+			//new System.Threading.Thread(() =>
+			//{
+			//	System.Threading.Thread.Sleep(1000);
+			//	this.chat.SetVisible(true, this.name);
+			//}).Start();
 			this.chat.SetVisible(true, this.name);
-			this.login.Visible = false;
-			this.register.Visible = false;
+			this.client.SendMessage(new
+			{
+				
+				type = MESSAGE_TYPE_GET_MESSAGES
+			});
+
+			//this.chat.SetVisible(true, this.name);
+			//this.chat.Visible = true;
+			//this.chat.Name = this.name;
+			//this.login.Visible = false;
+			//this.register.Visible = false;
 		}
 
 		private void jogarToolStripMenuItem_Click(object sender, System.EventArgs e)
@@ -292,7 +303,7 @@ namespace GameClient
 			this.chat.rtxtHistory.Text = "";
 			this.login.Visible = true;
 			this.register.Visible = false;
-			this.chat.Visible = false;
+			this.chat.SetVisible(false, this.name);
 			this.recovery.Visible = false;
 			this.menuBar.Visible = false;
 		}
