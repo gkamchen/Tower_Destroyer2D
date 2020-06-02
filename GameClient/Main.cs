@@ -33,6 +33,7 @@ namespace GameClient
 		private string userName;
 		private string name;
 		private Client client;
+		private Match match;
 		private Login login;
 		private Register register;
 		private Recovery recovery;
@@ -87,9 +88,13 @@ namespace GameClient
 				this.register = new Register(this.BtnCancelOnClick, this.BtnSaveOnClick);
 				this.chat = new Chat(this.BtnSendOnClick);
 				this.recovery = new Recovery(this.BtnCancelOnClick, this.BtnRecoveryOnClick);
+				this.match = new Match();
 
 				this.login.MdiParent = this;
 				this.chat.MdiParent = this;
+				this.match.MdiParent = this;
+				this.recovery.MdiParent = this;
+				this.register.MdiParent = this;
 
 				this.login.SetVisible(true);
 			}
@@ -295,7 +300,9 @@ namespace GameClient
 
 		private void jogarToolStripMenuItem_Click(object sender, System.EventArgs e)
 		{
-			MessageBox.Show("Ainda não funciona Pituzin, tenha calma, um dia funcionará!");
+			//MessageBox.Show("Ainda não funciona Pituzin, tenha calma, um dia funcionará!");
+			
+			this.match.Visible = true;
 		}
 
 		private void sairToolStripMenuItem_Click(object sender, System.EventArgs e)
