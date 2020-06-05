@@ -82,7 +82,7 @@
             // surpresaToolStripMenuItem
             // 
             this.surpresaToolStripMenuItem.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.surpresaToolStripMenuItem.ForeColor = System.Drawing.Color.White;
+            this.surpresaToolStripMenuItem.ForeColor = System.Drawing.Color.Red;
             this.surpresaToolStripMenuItem.Name = "surpresaToolStripMenuItem";
             this.surpresaToolStripMenuItem.Size = new System.Drawing.Size(102, 27);
             this.surpresaToolStripMenuItem.Text = "Não Clique";
