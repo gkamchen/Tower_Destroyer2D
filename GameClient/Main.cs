@@ -313,6 +313,20 @@ namespace GameClient
 			this.chat.SetVisible(false, this.name);
 			this.recovery.Visible = false;
 			this.menuBar.Visible = false;
+			this.match.Visible = false;
 		}
-	}
+
+        private void surpresaToolStripMenuItem_Click(object sender, System.EventArgs e)
+        {
+			DialogResult resposta = MessageBox.Show("Não leu o título? Não recomendo abrir, mas caso realmente queira, pressione \"SIM\"", "Não Clique", MessageBoxButtons.YesNo);
+
+			if (resposta == DialogResult.Yes)
+			{
+				lblSurpriseText.Text = "TE AVISEI PARA NÃO CLICAR BOBÃO, QUEM MANDA SER CURIOSO??? TRAVOU TODO O SISTEMA AGORA!!";
+				lblSurpriseText.Visible = true;
+			}
+			lblSurprise.Image = global::GameClient.Properties.Resources.Surpresa_120;
+			lblSurprise.Visible = true;
+		}
+    }
 }

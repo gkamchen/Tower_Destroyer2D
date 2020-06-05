@@ -77,7 +77,6 @@ namespace GameClient
 			return isValid;
 		}
 
-
 		private void btnCancel_Click(object sender, System.EventArgs e)
 		{
 			if (this.BtnCancelOnClick != null)
@@ -141,7 +140,7 @@ namespace GameClient
 				this.lblPassword.Enabled = false;
 				this.lblConfirmPassword.Enabled = false;
 
-				this.btnRecovery.Text = "Validar";
+				this.btnRecovery.BackgroundImage = global::GameClient.Properties.Resources.Check_32;
 			}
 		}
 
@@ -167,7 +166,7 @@ namespace GameClient
 				this.lblPassword.Enabled = true;
 				this.lblConfirmPassword.Enabled = true;
 
-				this.btnRecovery.Text = "Alterar Senha";
+				this.btnRecovery.BackgroundImage = global::GameClient.Properties.Resources.Save_32;
 			}
 		}
 	}

@@ -118,44 +118,44 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="61150" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\61150.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Unity3 (Down)" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Unity3 (Down).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="61143" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\61143.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Stone (6)" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Stone (6).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Grass" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Grass.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Pedra" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Pedra.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Potion (1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Potion (1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Potion (2)" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Potion (2).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Potion (3)" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Potion (3).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Stone (1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Stone (1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Stone (2)" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Stone (2).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Stone (3)" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Stone (3).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Stone (4)" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Stone (4).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Arregar_32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Arregar_32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Stone (5)" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Stone (5).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Stone (6)" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Stone (6).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Pedra" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Pedra.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Add_32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Add_32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Unity1 (Up)" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Unity1 (Up).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="61143" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\61143.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Stone (3)" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Stone (3).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Login_32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Login_32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="61150" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\61150.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Grass" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Grass.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Unity2 (Up)" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Unity2 (Up).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Stone (7)" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Stone (7).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -163,19 +163,55 @@
   <data name="Unity1 (Down)" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Unity1 (Down).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Unity1 (Up)" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Unity1 (Up).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Unity3 (Up).png" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Unity3 (Up).png.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Potion (2)" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Potion (2).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Save_32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Save_32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Arregar_50" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Arregar_50.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Send_52" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Send_52.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Close_32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Close_32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Logoff_32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Logoff_32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Check_32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Check_32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Potion (1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Potion (1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Stone (2)" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Stone (2).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Recovery_32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Recovery_32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Close_321" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Close_321.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Potion (3)" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Potion (3).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Unity2 (Down)" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Unity2 (Down).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Unity2 (Up)" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Unity2 (Up).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Stone (4)" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Stone (4).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Unity3 (Down)" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Unity3 (Down).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Stone (1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Stone (1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Unity3 (Up).png" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Unity3 (Up).png.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Surpresa_120" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Surpresa_120.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

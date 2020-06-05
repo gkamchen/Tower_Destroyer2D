@@ -32,6 +32,12 @@ namespace GameClient
             }
         }
 
+        private void btnClose_Click(object sender, System.EventArgs e)
+        {
+            SetVisible(false, this.Name);
+            rtxtHistory.Text = "";
+        }
+
         public void SetVisible(bool visible, string name)
         {
             if (this.InvokeRequired == true)
@@ -77,13 +83,13 @@ namespace GameClient
                 rtxtHistory.SelectionAlignment = HorizontalAlignment.Right;
                 rtxtHistory.Refresh();
 
-                rtxtHistory.SelectionColor = Color.BlueViolet;
-                rtxtHistory.SelectionFont = new Font("Comic Sans MS", 8, FontStyle.Bold);
+                rtxtHistory.SelectionColor = Color.FromArgb(40, 35, 80);
+                rtxtHistory.SelectionFont = new Font("Comic Sans MS", 10, FontStyle.Bold);
                 
                 rtxtHistory.AppendText(Environment.NewLine + $"{msg}");
 
-                rtxtHistory.SelectionColor = Color.BlueViolet;
-                rtxtHistory.SelectionFont = new Font("Comic Sans MS", 6);
+                rtxtHistory.SelectionColor = Color.FromArgb(40, 35, 80);
+                rtxtHistory.SelectionFont = new Font("Comic Sans MS", 8);
                 rtxtHistory.SelectionAlignment = HorizontalAlignment.Right;
                 rtxtHistory.AppendText(Environment.NewLine + $"{dateTime}");
                 
@@ -98,13 +104,13 @@ namespace GameClient
                 rtxtHistory.SelectionAlignment = HorizontalAlignment.Left;
                 rtxtHistory.Refresh();
 
-                rtxtHistory.SelectionColor = Color.Green;
-                rtxtHistory.SelectionFont = new Font("Comic Sans MS", 8, FontStyle.Bold);
+                rtxtHistory.SelectionColor = Color.White;//Color.FromArgb(255,145,0);
+                rtxtHistory.SelectionFont = new Font("Comic Sans MS", 10, FontStyle.Bold);
                 //rtxtHistory.SelectionAlignment = HorizontalAlignment.Left;
                 rtxtHistory.AppendText(Environment.NewLine + $"{name}: {msg}");
 
-                rtxtHistory.SelectionColor = Color.Green;
-                rtxtHistory.SelectionFont = new Font("Comic Sans MS", 6);
+                rtxtHistory.SelectionColor = Color.White;//Color.FromArgb(255, 145, 0);
+                rtxtHistory.SelectionFont = new Font("Comic Sans MS", 8);
                 //rtxtHistory.SelectionAlignment = HorizontalAlignment.Left;
                 rtxtHistory.AppendText(Environment.NewLine + $"{dateTime}");
                 rtxtHistory.Refresh();

@@ -34,7 +34,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Base">
-      <HintPath>..\packages\Base.dll</HintPath>
+      <HintPath>..\..\..\ExerciciosFaculdade\packages\Base.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -192,6 +192,36 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Unity3 %28Up%29.png.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Close_321.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Send_52.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Logoff_32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Login_32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Recovery_32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Add_32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Arregar_50.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Check_32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Save_32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Surpresa_120.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

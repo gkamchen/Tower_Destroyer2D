@@ -30,10 +30,8 @@
 		{
             this.txtName = new System.Windows.Forms.TextBox();
             this.lblName = new System.Windows.Forms.Label();
-            this.btnSave = new System.Windows.Forms.Button();
             this.txtUsername = new System.Windows.Forms.TextBox();
             this.lblUsername = new System.Windows.Forms.Label();
-            this.btnCancel = new System.Windows.Forms.Button();
             this.txtPassword = new System.Windows.Forms.TextBox();
             this.lblPassword = new System.Windows.Forms.Label();
             this.txtConfirmPassword = new System.Windows.Forms.TextBox();
@@ -42,133 +40,167 @@
             this.lblSecretText = new System.Windows.Forms.Label();
             this.txtSecretText = new System.Windows.Forms.TextBox();
             this.txtBirthDate = new System.Windows.Forms.MaskedTextBox();
+            this.btnCancel = new System.Windows.Forms.Button();
+            this.btnSave = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // txtName
             // 
-            this.txtName.Location = new System.Drawing.Point(17, 25);
+            this.txtName.BackColor = System.Drawing.SystemColors.ScrollBar;
+            this.txtName.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtName.Location = new System.Drawing.Point(10, 46);
             this.txtName.Name = "txtName";
-            this.txtName.Size = new System.Drawing.Size(213, 20);
+            this.txtName.Size = new System.Drawing.Size(213, 30);
             this.txtName.TabIndex = 0;
             // 
             // lblName
             // 
             this.lblName.AutoSize = true;
-            this.lblName.Location = new System.Drawing.Point(12, 9);
+            this.lblName.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(145)))), ((int)(((byte)(0)))));
+            this.lblName.Location = new System.Drawing.Point(8, 17);
             this.lblName.Name = "lblName";
-            this.lblName.Size = new System.Drawing.Size(38, 13);
+            this.lblName.Size = new System.Drawing.Size(59, 23);
             this.lblName.TabIndex = 8;
             this.lblName.Text = "Nome:";
             // 
-            // btnSave
-            // 
-            this.btnSave.Location = new System.Drawing.Point(158, 244);
-            this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(70, 23);
-            this.btnSave.TabIndex = 6;
-            this.btnSave.Text = "Salvar";
-            this.btnSave.UseVisualStyleBackColor = true;
-            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
-            // 
             // txtUsername
             // 
-            this.txtUsername.Location = new System.Drawing.Point(17, 65);
+            this.txtUsername.BackColor = System.Drawing.SystemColors.ScrollBar;
+            this.txtUsername.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtUsername.Location = new System.Drawing.Point(10, 105);
             this.txtUsername.Name = "txtUsername";
-            this.txtUsername.Size = new System.Drawing.Size(213, 20);
+            this.txtUsername.Size = new System.Drawing.Size(213, 26);
             this.txtUsername.TabIndex = 1;
             // 
             // lblUsername
             // 
             this.lblUsername.AutoSize = true;
-            this.lblUsername.Location = new System.Drawing.Point(12, 48);
+            this.lblUsername.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblUsername.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(145)))), ((int)(((byte)(0)))));
+            this.lblUsername.Location = new System.Drawing.Point(8, 79);
             this.lblUsername.Name = "lblUsername";
-            this.lblUsername.Size = new System.Drawing.Size(58, 13);
+            this.lblUsername.Size = new System.Drawing.Size(74, 23);
             this.lblUsername.TabIndex = 5;
-            this.lblUsername.Text = "Username:";
-            // 
-            // btnCancel
-            // 
-            this.btnCancel.Location = new System.Drawing.Point(15, 244);
-            this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(70, 23);
-            this.btnCancel.TabIndex = 7;
-            this.btnCancel.Text = "Cancelar";
-            this.btnCancel.UseVisualStyleBackColor = true;
-            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
+            this.lblUsername.Text = "Usuário:";
             // 
             // txtPassword
             // 
-            this.txtPassword.Location = new System.Drawing.Point(17, 104);
+            this.txtPassword.BackColor = System.Drawing.SystemColors.ScrollBar;
+            this.txtPassword.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPassword.Location = new System.Drawing.Point(10, 160);
             this.txtPassword.Name = "txtPassword";
-            this.txtPassword.Size = new System.Drawing.Size(211, 20);
+            this.txtPassword.Size = new System.Drawing.Size(213, 26);
             this.txtPassword.TabIndex = 2;
             this.txtPassword.UseSystemPasswordChar = true;
             // 
             // lblPassword
             // 
             this.lblPassword.AutoSize = true;
-            this.lblPassword.Location = new System.Drawing.Point(14, 88);
+            this.lblPassword.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPassword.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(145)))), ((int)(((byte)(0)))));
+            this.lblPassword.Location = new System.Drawing.Point(6, 134);
             this.lblPassword.Name = "lblPassword";
-            this.lblPassword.Size = new System.Drawing.Size(41, 13);
+            this.lblPassword.Size = new System.Drawing.Size(63, 23);
             this.lblPassword.TabIndex = 11;
             this.lblPassword.Text = "Senha:";
             // 
             // txtConfirmPassword
             // 
-            this.txtConfirmPassword.Location = new System.Drawing.Point(17, 143);
+            this.txtConfirmPassword.BackColor = System.Drawing.SystemColors.ScrollBar;
+            this.txtConfirmPassword.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtConfirmPassword.Location = new System.Drawing.Point(12, 215);
             this.txtConfirmPassword.Name = "txtConfirmPassword";
-            this.txtConfirmPassword.Size = new System.Drawing.Size(211, 20);
+            this.txtConfirmPassword.Size = new System.Drawing.Size(211, 26);
             this.txtConfirmPassword.TabIndex = 3;
             this.txtConfirmPassword.UseSystemPasswordChar = true;
             // 
             // lblConfirmPassword
             // 
             this.lblConfirmPassword.AutoSize = true;
-            this.lblConfirmPassword.Location = new System.Drawing.Point(14, 127);
+            this.lblConfirmPassword.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblConfirmPassword.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(145)))), ((int)(((byte)(0)))));
+            this.lblConfirmPassword.Location = new System.Drawing.Point(9, 189);
             this.lblConfirmPassword.Name = "lblConfirmPassword";
-            this.lblConfirmPassword.Size = new System.Drawing.Size(88, 13);
+            this.lblConfirmPassword.Size = new System.Drawing.Size(145, 23);
             this.lblConfirmPassword.TabIndex = 13;
             this.lblConfirmPassword.Text = "Confirmar Senha:";
             // 
             // lblBirthDate
             // 
             this.lblBirthDate.AutoSize = true;
-            this.lblBirthDate.Location = new System.Drawing.Point(14, 166);
+            this.lblBirthDate.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblBirthDate.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(145)))), ((int)(((byte)(0)))));
+            this.lblBirthDate.Location = new System.Drawing.Point(8, 299);
             this.lblBirthDate.Name = "lblBirthDate";
-            this.lblBirthDate.Size = new System.Drawing.Size(107, 13);
+            this.lblBirthDate.Size = new System.Drawing.Size(174, 23);
             this.lblBirthDate.TabIndex = 13;
             this.lblBirthDate.Text = "Data de Nascimento:";
             // 
             // lblSecretText
             // 
             this.lblSecretText.AutoSize = true;
-            this.lblSecretText.Location = new System.Drawing.Point(12, 205);
+            this.lblSecretText.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSecretText.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(145)))), ((int)(((byte)(0)))));
+            this.lblSecretText.Location = new System.Drawing.Point(9, 244);
             this.lblSecretText.Name = "lblSecretText";
-            this.lblSecretText.Size = new System.Drawing.Size(200, 13);
+            this.lblSecretText.Size = new System.Drawing.Size(180, 23);
             this.lblSecretText.TabIndex = 13;
-            this.lblSecretText.Text = "Texto de Segurança: (Recuperar Senha)";
+            this.lblSecretText.Text = "Texto de Segurança: ";
             // 
             // txtSecretText
             // 
-            this.txtSecretText.Location = new System.Drawing.Point(15, 221);
+            this.txtSecretText.BackColor = System.Drawing.SystemColors.ScrollBar;
+            this.txtSecretText.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtSecretText.Location = new System.Drawing.Point(12, 270);
             this.txtSecretText.Name = "txtSecretText";
-            this.txtSecretText.Size = new System.Drawing.Size(213, 20);
+            this.txtSecretText.Size = new System.Drawing.Size(211, 26);
             this.txtSecretText.TabIndex = 5;
             // 
             // txtBirthDate
             // 
-            this.txtBirthDate.Location = new System.Drawing.Point(17, 182);
+            this.txtBirthDate.BackColor = System.Drawing.SystemColors.ScrollBar;
+            this.txtBirthDate.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtBirthDate.Location = new System.Drawing.Point(13, 325);
             this.txtBirthDate.Mask = "00/00/0000";
             this.txtBirthDate.Name = "txtBirthDate";
-            this.txtBirthDate.Size = new System.Drawing.Size(211, 20);
+            this.txtBirthDate.Size = new System.Drawing.Size(169, 26);
             this.txtBirthDate.TabIndex = 4;
             this.txtBirthDate.ValidatingType = typeof(System.DateTime);
+            // 
+            // btnCancel
+            // 
+            this.btnCancel.BackgroundImage = global::GameClient.Properties.Resources.Close_321;
+            this.btnCancel.FlatAppearance.BorderSize = 0;
+            this.btnCancel.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.btnCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCancel.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCancel.Location = new System.Drawing.Point(197, 8);
+            this.btnCancel.Name = "btnCancel";
+            this.btnCancel.Size = new System.Drawing.Size(32, 32);
+            this.btnCancel.TabIndex = 7;
+            this.btnCancel.UseVisualStyleBackColor = true;
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
+            // 
+            // btnSave
+            // 
+            this.btnSave.BackgroundImage = global::GameClient.Properties.Resources.Save_32;
+            this.btnSave.FlatAppearance.BorderSize = 0;
+            this.btnSave.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.btnSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSave.Location = new System.Drawing.Point(197, 321);
+            this.btnSave.Name = "btnSave";
+            this.btnSave.Size = new System.Drawing.Size(32, 32);
+            this.btnSave.TabIndex = 6;
+            this.btnSave.UseVisualStyleBackColor = true;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // Register
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(240, 290);
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(35)))), ((int)(((byte)(80)))));
+            this.ClientSize = new System.Drawing.Size(240, 368);
             this.Controls.Add(this.txtBirthDate);
             this.Controls.Add(this.txtSecretText);
             this.Controls.Add(this.txtConfirmPassword);
