@@ -29,6 +29,11 @@ namespace GameClient
 		private const int MESSAGE_TYPE_UPDATE_PASSWORD_SUCCESS = 14;
 		private const int MESSAGE_TYPE_UPDATE_PASSWORD_ERROR = 15;
 
+
+		private const int MESSAGE_TYPE_MATCH_DATA_REQUEST = 16;
+		private const int MESSAGE_TYPE_MATCH_DATA_SUCCESS = 17;
+		private const int MESSAGE_TYPE_MATCH_DATA_ERROR = 18;
+
 		private int userId;
 		private string userName;
 		private string name;
@@ -273,6 +278,12 @@ namespace GameClient
 					case MESSAGE_TYPE_UPDATE_PASSWORD_ERROR:
 						MessageBox.Show(message.GetString("error"));
 						break;
+					case MESSAGE_TYPE_MATCH_DATA_SUCCESS:
+						if (this.match != null)
+						{
+							this.match.InitializeMatrix(message.GetSingleDimArrayInt32("data"));
+						}
+						break;
 				}
 			}
 		}
@@ -300,9 +311,11 @@ namespace GameClient
 
 		private void jogarToolStripMenuItem_Click(object sender, System.EventArgs e)
 		{
-			//MessageBox.Show("Ainda não funciona Pituzin, tenha calma, um dia funcionará!");
-			
-			this.match.Visible = true;
+			this.match.SetVisible(true);
+			this.client.SendMessage(new
+			{
+				type = MESSAGE_TYPE_MATCH_DATA_REQUEST
+			});
 		}
 
 		private void sairToolStripMenuItem_Click(object sender, System.EventArgs e)

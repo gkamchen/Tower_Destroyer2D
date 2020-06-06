@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
+using System.Linq;
 
 namespace GameServer
 {
@@ -29,6 +30,10 @@ namespace GameServer
         private const int MESSAGE_TYPE_UPDATE_PASSWORD_SUCCESS = 14;
         private const int MESSAGE_TYPE_UPDATE_PASSWORD_ERROR = 15;
 
+        private const int MESSAGE_TYPE_MATCH_DATA_REQUEST = 16;
+        private const int MESSAGE_TYPE_MATCH_DATA_SUCCESS = 17;
+        private const int MESSAGE_TYPE_MATCH_DATA_ERROR = 18;
+
         static List<ThreadClient> clients = new List<ThreadClient>();
 
         static void Main(string[] args)
@@ -49,7 +54,102 @@ namespace GameServer
                 clients.Add(client);
             }
         }
+        private enum Type
+        {
+            Terra = 1,
+            Pedra = 2,
+            Item = 3,
+            Unidade1 = 4,
+            Unidade2 = 5,
+            Unidade3 = 6
+        }
+        private static int[] InitializeArrayWithNoDuplicates(int start, int size)
+        {
+            Random rand = new Random();
 
+            return Enumerable.Repeat<int>(0, size).Select((value, index) => new { i = index + start, rand = rand.Next() }).OrderBy(x => x.rand).Select(x => x.i).ToArray();
+        }
+        private static int[] GenerateMatchData()
+        {
+            int qtdUnidade1 = 80;
+            int qtdUnidade2 = 60;
+            int qtdUnidade3 = 40;
+            int qtdItens = 20;
+            int qtdPedra = 50;
+            int qtdTerra = 100;
+            int qtdPosicoes = 350;
+
+            int index = 0;
+            int[] indexes = InitializeArrayWithNoDuplicates(0, qtdPosicoes / 2);
+
+            int[] itens = new int[qtdPosicoes];
+
+            for (int i = 0; i < qtdUnidade1 / 2; i++)
+            {
+                itens[indexes[index++]] = (Int32)Type.Unidade1;
+            }
+
+            for (int i = 0; i < qtdUnidade2 / 2; i++)
+            {
+                itens[indexes[index++]] = (Int32)Type.Unidade2;
+            }
+
+            for (int i = 0; i < qtdUnidade3 / 2; i++)
+            {
+                itens[indexes[index++]] = (Int32)Type.Unidade3;
+            }
+
+            for (int i = 0; i < qtdTerra / 2; i++)
+            {
+                itens[indexes[index++]] = (Int32)Type.Terra;
+            }
+
+            for (int i = 0; i < qtdPedra / 2; i++)
+            {
+                itens[indexes[index++]] = (Int32)Type.Pedra;
+            }
+
+            for (int i = 0; i < qtdItens / 2; i++)
+            {
+                itens[indexes[index++]] = (Int32)Type.Item;
+            }
+
+            // --------------------------------------------------------------------------------------------------------------- //
+
+            index = 0;
+            indexes = InitializeArrayWithNoDuplicates(175, qtdPosicoes / 2);
+
+            for (int i = 0; i < qtdUnidade1 / 2; i++)
+            {
+                itens[indexes[index++]] = (Int32)Type.Unidade1;
+            }
+
+            for (int i = 0; i < qtdUnidade2 / 2; i++)
+            {
+                itens[indexes[index++]] = (Int32)Type.Unidade2;
+            }
+
+            for (int i = 0; i < qtdUnidade3 / 2; i++)
+            {
+                itens[indexes[index++]] = (Int32)Type.Unidade3;
+            }
+
+            for (int i = 0; i < qtdTerra / 2; i++)
+            {
+                itens[indexes[index++]] = (Int32)Type.Terra;
+            }
+
+            for (int i = 0; i < qtdPedra / 2; i++)
+            {
+                itens[indexes[index++]] = (Int32)Type.Pedra;
+            }
+
+            for (int i = 0; i < qtdItens / 2; i++)
+            {
+                itens[indexes[index++]] = (Int32)Type.Item;
+            }
+            return itens;
+        }
         static bool InsertUser(string name, string username, string password, string birthDate, string securityText)
         {
             bool result = false;
@@ -449,6 +549,7 @@ namespace GameServer
                             try
                             {
                                 userData = GetUser(login, password);
+
                             }
                             catch
                             {
@@ -572,8 +673,20 @@ namespace GameServer
                             }
                         }
                         break;
+                    case MESSAGE_TYPE_MATCH_DATA_REQUEST:
+                        if (client != null)
+                        {
+                            client.SendMessage(new
+                            {
+                                type = MESSAGE_TYPE_MATCH_DATA_SUCCESS,
+                                data = GenerateMatchData()
+                            });
+
+                        }
+                        break;
                 }
             }
         }
+
     }
 }
