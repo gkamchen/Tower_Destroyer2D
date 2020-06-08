@@ -32,9 +32,6 @@
             this.jogarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.chatToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.sairToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.surpresaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.lblSurpriseText = new System.Windows.Forms.Label();
-            this.lblSurprise = new System.Windows.Forms.Label();
             this.menuBar.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -44,7 +41,6 @@
             this.menuBar.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.jogarToolStripMenuItem,
             this.chatToolStripMenuItem,
-            this.surpresaToolStripMenuItem,
             this.sairToolStripMenuItem});
             this.menuBar.Location = new System.Drawing.Point(0, 0);
             this.menuBar.Name = "menuBar";
@@ -79,44 +75,12 @@
             this.sairToolStripMenuItem.Text = "Sair";
             this.sairToolStripMenuItem.Click += new System.EventHandler(this.sairToolStripMenuItem_Click);
             // 
-            // surpresaToolStripMenuItem
-            // 
-            this.surpresaToolStripMenuItem.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.surpresaToolStripMenuItem.ForeColor = System.Drawing.Color.Red;
-            this.surpresaToolStripMenuItem.Name = "surpresaToolStripMenuItem";
-            this.surpresaToolStripMenuItem.Size = new System.Drawing.Size(102, 27);
-            this.surpresaToolStripMenuItem.Text = "Não Clique";
-            this.surpresaToolStripMenuItem.Click += new System.EventHandler(this.surpresaToolStripMenuItem_Click);
-            // 
-            // lblSurpriseText
-            // 
-            this.lblSurpriseText.AutoSize = true;
-            this.lblSurpriseText.Font = new System.Drawing.Font("Comic Sans MS", 20.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSurpriseText.ForeColor = System.Drawing.Color.Red;
-            this.lblSurpriseText.Location = new System.Drawing.Point(631, 242);
-            this.lblSurpriseText.Name = "lblSurpriseText";
-            this.lblSurpriseText.Size = new System.Drawing.Size(29, 38);
-            this.lblSurpriseText.TabIndex = 1;
-            this.lblSurpriseText.Text = ".";
-            this.lblSurpriseText.Visible = false;
-            // 
-            // lblSurprise
-            // 
-            this.lblSurprise.Location = new System.Drawing.Point(631, 302);
-            this.lblSurprise.Name = "lblSurprise";
-            this.lblSurprise.Size = new System.Drawing.Size(120, 120);
-            this.lblSurprise.TabIndex = 1;
-            this.lblSurprise.Text = ".";
-            this.lblSurprise.Visible = false;
-            // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(35)))), ((int)(((byte)(60)))));
             this.ClientSize = new System.Drawing.Size(1403, 647);
-            this.Controls.Add(this.lblSurpriseText);
-            this.Controls.Add(this.lblSurprise);
             this.Controls.Add(this.menuBar);
             this.MainMenuStrip = this.menuBar;
             this.Name = "Main";
@@ -135,8 +99,5 @@
 		private System.Windows.Forms.ToolStripMenuItem jogarToolStripMenuItem;
 		private System.Windows.Forms.ToolStripMenuItem chatToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem sairToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem surpresaToolStripMenuItem;
-        private System.Windows.Forms.Label lblSurprise;
-        private System.Windows.Forms.Label lblSurpriseText;
     }
 }

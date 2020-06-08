@@ -209,6 +209,7 @@ namespace GameClient
                     btnY += btnHeight;
                 }
             }
+            this.btnClose.Visible = true;
         }
         public void SetVisible(bool visible)
         {

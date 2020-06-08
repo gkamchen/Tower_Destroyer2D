@@ -32,7 +32,7 @@ namespace GameServer
 
         private const int MESSAGE_TYPE_MATCH_DATA_REQUEST = 16;
         private const int MESSAGE_TYPE_MATCH_DATA_SUCCESS = 17;
-        private const int MESSAGE_TYPE_MATCH_DATA_ERROR = 18;
+        private const int MESSAGE_TYPE_MATCH_DATA_WAITING = 18;
 
         static List<ThreadClient> clients = new List<ThreadClient>();
 
@@ -42,7 +42,6 @@ namespace GameServer
 
             server.Start(OnClientConnect, OnClientReceiveMessage);
         }
-
         static void OnClientConnect(object sender, EventArgs eventArgs)
         {
             ConnectEventArgs connectEventArgs = eventArgs as ConnectEventArgs;
@@ -224,17 +223,6 @@ namespace GameServer
             }
 
         }
-
-        /*
-                catch
-                {
-                    uniqueUser = false;
-                    result = false;
-                }
-    }
-
-        }
-    */
         static dynamic GetUser(string username, string password)
         {
             dynamic result;
@@ -289,7 +277,6 @@ namespace GameServer
 
             return result;
         }
-
         static dynamic GetValidateUser(string username, string birthDate, string securityText)
         {
             dynamic result;
@@ -337,7 +324,6 @@ namespace GameServer
 
             return result;
         }
-
         static bool UpdatePassword(Int32 idPlayer, String newPassword)
         {
             bool result = false;
@@ -369,7 +355,6 @@ namespace GameServer
 
             return result;
         }
-
         static bool InsertMessage(int idPlayer, string messageText)
         {
             bool result = false;
@@ -401,7 +386,6 @@ namespace GameServer
 
             return result;
         }
-
         static List<dynamic> GetMessages()
         {
             List<dynamic> result = new List<dynamic>();
@@ -449,7 +433,18 @@ namespace GameServer
 
             return result;
         }
+        static void StartMatch()
+        {
+            foreach (ThreadClient client in clients)
+            {
+                client.SendMessage(new
+                {
+                    type = MESSAGE_TYPE_MATCH_DATA_SUCCESS,
+                    data = GenerateMatchData()
+                });
 
+            }
+        }
         static void OnClientReceiveMessage(object sender, EventArgs eventArgs)
         {
             MessageEventArgs messageEventArgs = eventArgs as MessageEventArgs;
@@ -676,12 +671,18 @@ namespace GameServer
                     case MESSAGE_TYPE_MATCH_DATA_REQUEST:
                         if (client != null)
                         {
-                            client.SendMessage(new
+                            if (client.GetNumber() % 2 == 0)
                             {
-                                type = MESSAGE_TYPE_MATCH_DATA_SUCCESS,
-                                data = GenerateMatchData()
-                            });
+                                StartMatch();
+                            }
+                            else
+                            {
+                                client.SendMessage(new
+                                {
+                                    type = MESSAGE_TYPE_MATCH_DATA_WAITING
+                                });
 
+                            }
                         }
                         break;
                 }
