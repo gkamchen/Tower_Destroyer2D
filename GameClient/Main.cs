@@ -270,7 +270,7 @@ namespace GameClient
                     case MESSAGE_TYPE_MATCH_DATA_SUCCESS:
                         if (this.match != null)
                         {
-                            MessageBox.Show("Partida iniciada!");
+                            MessageBox.Show("Que comecem os jogos!");
                             this.match.InitializeMatrix(message.GetSingleDimArrayInt32("data"));
                         }
                         break;

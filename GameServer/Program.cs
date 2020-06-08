@@ -38,9 +38,11 @@ namespace GameServer
 
         static void Main(string[] args)
         {
+            Console.WriteLine("Servidor Aguardando conexões...");
             Server server = new Server("127.0.0.1", 5000);
 
             server.Start(OnClientConnect, OnClientReceiveMessage);
+            Console.WriteLine("Servidor OK...");
         }
         static void OnClientConnect(object sender, EventArgs eventArgs)
         {
@@ -51,6 +53,8 @@ namespace GameServer
                 ThreadClient client = connectEventArgs.Client;
 
                 clients.Add(client);
+
+                Console.WriteLine($"Cliente nº {clients.Count()} conectou-se.");
             }
         }
         private enum Type
@@ -202,6 +206,7 @@ namespace GameServer
                     connection.Close();
                     uniqueUser = true;
                     result = true;
+                    Console.WriteLine($"Usuário {username} inserido com sucesso no banco de dados!");
                 }
                 catch (SqlException sqlEx)
                 {
@@ -209,15 +214,18 @@ namespace GameServer
                     {
                         uniqueUser = false;
                         result = false;
+                        Console.WriteLine($"Usuário {username} não foi inserido no banco de dados. Usuário já existente!");
                     }
                     else
                     {
                         result = false;
+                        Console.WriteLine($"Usuário {username} não foi inserido no banco de dados.");
                     }
                 }
                 catch (Exception)
                 {
                     result = false;
+                    Console.WriteLine($"Usuário {username} não foi inserido no banco de dados. Usuário já existente!");
                 }
                 return result;
             }
@@ -261,10 +269,12 @@ namespace GameServer
                             userName = reader.GetString(reader.GetOrdinal("username")),
                             name = reader.GetString(reader.GetOrdinal("name"))
                         };
+                        Console.WriteLine($"Usuário {username} realizou login!");
                     }
                     else
                     {
                         result = null;
+                        Console.WriteLine($"Usuário {username} falhou no login!");
                     }
 
                     connection.Close();
@@ -308,10 +318,12 @@ namespace GameServer
                             type = MESSAGE_TYPE_RECOVERY_USER_PASSWORD_SUCCESS,
                             idPlayer = reader.GetInt32(reader.GetOrdinal("idPlayer"))
                         };
+                        Console.WriteLine($"As informações foram verificadas para o usuário {username}!");
                     }
                     else
                     {
                         result = null;
+                        Console.WriteLine($"As informações não foram verificadas para o usuário {username}!");
                     }
 
                     connection.Close();
@@ -346,11 +358,14 @@ namespace GameServer
                     connection.Close();
 
                     result = true;
+
+                    Console.WriteLine($"Senha alterado com sucesso. Jogador de ID {idPlayer}");
                 }
             }
             catch (Exception ex)
             {
                 result = false;
+                Console.WriteLine($"Falha ao alterar senha do Jogador de ID {idPlayer}");
             }
 
             return result;
@@ -444,6 +459,7 @@ namespace GameServer
                 });
 
             }
+
         }
         static void OnClientReceiveMessage(object sender, EventArgs eventArgs)
         {
