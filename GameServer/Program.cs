@@ -35,7 +35,7 @@ namespace GameServer
         private const int MESSAGE_TYPE_MATCH_DATA_WAITING = 18;
 
         static List<ThreadClient> clients = new List<ThreadClient>();
-
+        static int[] data = GenerateMatchData();
         static void Main(string[] args)
         {
             Console.WriteLine("Servidor Aguardando conexões...");
@@ -156,34 +156,6 @@ namespace GameServer
         static bool InsertUser(string name, string username, string password, string birthDate, string securityText)
         {
             bool result = false;
-            /*
-            using (SqlConnection connectionGet = new SqlConnection(@"Data Source=localhost\SQLEXPRESS;Initial Catalog=game;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False"))
-            {
-                try
-                {
-                    connectionGet.Open();
-
-                    SqlCommand sqlCommandGet = connectionGet.CreateCommand();
-
-                    sqlCommandGet.CommandText = @"
-						SELECT idPlayer
-							  ,[name]
-							  ,username
-							  ,[password]
-							  ,experience
-							  ,birthDate
-							  ,securityText
-						  FROM player
-						WHERE username = @username
-					";
-
-                    sqlCommandGet.Parameters.Add(new SqlParameter("username", username));
-
-                    SqlDataReader reader = sqlCommandGet.ExecuteReader();
-
-                    if (reader.GetString(reader.GetOrdinal("name")) != "")
-                    {
-                    */
 
             using (SqlConnection connection = new SqlConnection(@"Data Source=localhost\SQLEXPRESS;Initial Catalog=game;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False"))
             {
@@ -450,13 +422,17 @@ namespace GameServer
         }
         static void StartMatch()
         {
+            
+            int isFirst = 1;
             foreach (ThreadClient client in clients)
             {
                 client.SendMessage(new
                 {
                     type = MESSAGE_TYPE_MATCH_DATA_SUCCESS,
-                    data = GenerateMatchData()
+                    data = Program.data,
+                    isFirst = isFirst
                 });
+                isFirst = 0;
 
             }
 

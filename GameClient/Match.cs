@@ -15,7 +15,7 @@ namespace GameClient
     {
 
         private delegate void SetVisibleDelegate(bool visible);
-        private delegate void InitializeMatrixDelegate(int[] itens);
+        private delegate void InitializeMatrixDelegate(int[] itens, int isFirst);
         private enum Type
         {
             Terra = 1,
@@ -38,17 +38,19 @@ namespace GameClient
             return Enumerable.Repeat<int>(0, size).Select((value, index) => new { i = index, rand = rand.Next() }).OrderBy(x => x.rand).Select(x => x.i).ToArray();
         }
 
-        public void InitializeMatrix(int[] itens)
+        public void InitializeMatrix(int[] itens, int isFirst)
         {
             if (this.InvokeRequired == true)
             {
                 this.Invoke(new InitializeMatrixDelegate(InitializeMatrix), new object[]
                 {
-                    itens
+                    itens,
+                    isFirst
                 });
             }
             else
             {
+                MessageBox.Show(isFirst.ToString());
                 int btnWidth = 50;
                 int btnHeight = 50;
                 int btnX = 0;
@@ -59,6 +61,10 @@ namespace GameClient
                 int totalLines = 14;
                 int totalColumns = 25;
                 int totalLinesSeparator = totalLines / 2;
+                if (isFirst == 1)
+                {
+                    indice = (totalLines * totalColumns) / 2;
+                }
 
                 for (int i = 0; i < totalLinesSeparator; i++)
                 {
@@ -139,6 +145,10 @@ namespace GameClient
 
                 btnX = 0;
                 btnY = btnHeight * (totalLinesSeparator + 1);
+                if (isFirst == 1)
+                {
+                    indice = 0;
+                }
 
                 for (int i = 0; i < totalLinesSeparator; i++)
                 {
@@ -208,8 +218,9 @@ namespace GameClient
                     btnX = 0;
                     btnY += btnHeight;
                 }
+                this.btnClose.Visible = true;
             }
-            this.btnClose.Visible = true;
+            
         }
         public void SetVisible(bool visible)
         {

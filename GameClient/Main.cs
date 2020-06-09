@@ -271,7 +271,7 @@ namespace GameClient
                         if (this.match != null)
                         {
                             MessageBox.Show("Que comecem os jogos!");
-                            this.match.InitializeMatrix(message.GetSingleDimArrayInt32("data"));
+                            this.match.InitializeMatrix(message.GetSingleDimArrayInt32("data"), message.GetInt32("isFirst"));
                         }
                         break;
                     case MESSAGE_TYPE_MATCH_DATA_WAITING:
