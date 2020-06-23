@@ -148,9 +148,6 @@
     <None Include="Resources\Grass.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\Pedra.png" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\Potion %281%29.png" />
   </ItemGroup>
   <ItemGroup>
@@ -242,6 +239,27 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Surpresa_12011.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Unidade_Vermelha_Top.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Fundo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Pedra.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Terra.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Unidade_Azul_Bottom.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Unidade_Azul_Top.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Unidade_Vermelha_Bottom.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

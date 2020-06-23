@@ -62,9 +62,7 @@ namespace GameServer
             Terra = 1,
             Pedra = 2,
             Item = 3,
-            Unidade1 = 4,
-            Unidade2 = 5,
-            Unidade3 = 6
+            Unidade = 4
         }
         private static int[] InitializeArrayWithNoDuplicates(int start, int size)
         {
@@ -74,12 +72,9 @@ namespace GameServer
         }
         private static int[] GenerateMatchData()
         {
-            int qtdUnidade1 = 80;
-            int qtdUnidade2 = 60;
-            int qtdUnidade3 = 40;
-            int qtdItens = 20;
-            int qtdPedra = 50;
-            int qtdTerra = 100;
+            int qtdUnidade = 80;
+            int qtdPedra = 110;
+            int qtdTerra = 160;
             int qtdPosicoes = 350;
 
             int index = 0;
@@ -87,19 +82,9 @@ namespace GameServer
 
             int[] itens = new int[qtdPosicoes];
 
-            for (int i = 0; i < qtdUnidade1 / 2; i++)
+            for (int i = 0; i < qtdUnidade / 2; i++)
             {
-                itens[indexes[index++]] = (Int32)Type.Unidade1;
-            }
-
-            for (int i = 0; i < qtdUnidade2 / 2; i++)
-            {
-                itens[indexes[index++]] = (Int32)Type.Unidade2;
-            }
-
-            for (int i = 0; i < qtdUnidade3 / 2; i++)
-            {
-                itens[indexes[index++]] = (Int32)Type.Unidade3;
+                itens[indexes[index++]] = (Int32)Type.Unidade;
             }
 
             for (int i = 0; i < qtdTerra / 2; i++)
@@ -111,30 +96,14 @@ namespace GameServer
             {
                 itens[indexes[index++]] = (Int32)Type.Pedra;
             }
-
-            for (int i = 0; i < qtdItens / 2; i++)
-            {
-                itens[indexes[index++]] = (Int32)Type.Item;
-            }
-
             // --------------------------------------------------------------------------------------------------------------- //
 
             index = 0;
             indexes = InitializeArrayWithNoDuplicates(175, qtdPosicoes / 2);
 
-            for (int i = 0; i < qtdUnidade1 / 2; i++)
+            for (int i = 0; i < qtdUnidade / 2; i++)
             {
-                itens[indexes[index++]] = (Int32)Type.Unidade1;
-            }
-
-            for (int i = 0; i < qtdUnidade2 / 2; i++)
-            {
-                itens[indexes[index++]] = (Int32)Type.Unidade2;
-            }
-
-            for (int i = 0; i < qtdUnidade3 / 2; i++)
-            {
-                itens[indexes[index++]] = (Int32)Type.Unidade3;
+                itens[indexes[index++]] = (Int32)Type.Unidade;
             }
 
             for (int i = 0; i < qtdTerra / 2; i++)
@@ -147,10 +116,6 @@ namespace GameServer
                 itens[indexes[index++]] = (Int32)Type.Pedra;
             }
 
-            for (int i = 0; i < qtdItens / 2; i++)
-            {
-                itens[indexes[index++]] = (Int32)Type.Item;
-            }
             return itens;
         }
         static bool InsertUser(string name, string username, string password, string birthDate, string securityText)

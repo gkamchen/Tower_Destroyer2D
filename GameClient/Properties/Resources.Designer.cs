@@ -103,6 +103,16 @@ namespace GameClient.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Fundo {
+            get {
+                object obj = ResourceManager.GetObject("Fundo", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Login_32 {
             get {
                 object obj = ResourceManager.GetObject("Login_32", resourceCulture);
@@ -116,6 +126,16 @@ namespace GameClient.Properties {
         internal static System.Drawing.Bitmap Logoff_32 {
             get {
                 object obj = ResourceManager.GetObject("Logoff_32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Pedra {
+            get {
+                object obj = ResourceManager.GetObject("Pedra", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -146,6 +166,56 @@ namespace GameClient.Properties {
         internal static System.Drawing.Bitmap Send_52 {
             get {
                 object obj = ResourceManager.GetObject("Send_52", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Terra {
+            get {
+                object obj = ResourceManager.GetObject("Terra", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Unidade_Azul_Bottom {
+            get {
+                object obj = ResourceManager.GetObject("Unidade_Azul_Bottom", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Unidade_Azul_Top {
+            get {
+                object obj = ResourceManager.GetObject("Unidade_Azul_Top", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Unidade_Vermelha_Bottom {
+            get {
+                object obj = ResourceManager.GetObject("Unidade_Vermelha_Bottom", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Unidade_Vermelha_Top {
+            get {
+                object obj = ResourceManager.GetObject("Unidade_Vermelha_Top", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
