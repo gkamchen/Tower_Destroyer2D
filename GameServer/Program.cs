@@ -643,6 +643,14 @@ namespace GameServer
                             });
                         }
                         break;
+                    case MESSAGE_TYPE_MATCH_ENEMY_ATTACK:
+                        if (client != null)
+                        {
+
+                            Console.WriteLine($"Linha: {message.GetInt32("line")}");
+                            Console.WriteLine($"Coluna: {message.GetInt32("column")}");
+                        }
+                        break;
                 }
             }
         }

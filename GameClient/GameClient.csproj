@@ -65,6 +65,7 @@
     <Compile Include="EventArgs\BtnRecoveryOnClickEventArgs .cs" />
     <Compile Include="EventArgs\BtnSaveOnClickEventArgs.cs" />
     <Compile Include="EventArgs\BtnSendOnClickEventArgs.cs" />
+    <Compile Include="EventArgs\EnemyAttackEventArgs.cs" />
     <Compile Include="Login.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -82,6 +83,9 @@
     </Compile>
     <Compile Include="Match.Designer.cs">
       <DependentUpon>Match.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MyButton.cs">
+      <SubType>Component</SubType>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

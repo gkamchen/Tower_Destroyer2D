@@ -92,7 +92,7 @@ namespace GameClient
 				this.register = new Register(this.BtnCancelOnClick, this.BtnSaveOnClick);
 				this.chat = new Chat(this.BtnSendOnClick);
 				this.recovery = new Recovery(this.BtnCancelOnClick, this.BtnRecoveryOnClick);
-				this.match = new Match();
+				this.match = new Match(this.EnemyAttack);
 
 				this.login.MdiParent = this;
 				this.chat.MdiParent = this;
@@ -113,6 +113,20 @@ namespace GameClient
 		{
 			this.login.Visible = false;
 			this.register.Visible = true;
+		}
+		private void EnemyAttack(object sender, System.EventArgs eventArgs)
+		{
+			EnemyAttackEventArgs enemyAttackEventArgs = eventArgs as EnemyAttackEventArgs;
+
+			if (enemyAttackEventArgs != null && this.client != null)
+			{
+				this.client.SendMessage(new
+				{
+					type = MESSAGE_TYPE_MATCH_ENEMY_ATTACK,
+					line = enemyAttackEventArgs.Line,
+					column = enemyAttackEventArgs.Column
+				});
+			}
 		}
 		private void BtnLoginOnClick(object sender, System.EventArgs eventArgs)
 		{
