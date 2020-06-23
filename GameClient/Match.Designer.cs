@@ -33,6 +33,7 @@
             // 
             // btnClose
             // 
+            this.btnClose.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(108)))), ((int)(((byte)(153)))));
             this.btnClose.BackgroundImage = global::GameClient.Properties.Resources.Arregar_50;
             this.btnClose.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.btnClose.FlatAppearance.BorderSize = 0;
@@ -41,7 +42,7 @@
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(50, 50);
             this.btnClose.TabIndex = 3;
-            this.btnClose.UseVisualStyleBackColor = true;
+            this.btnClose.UseVisualStyleBackColor = false;
             this.btnClose.Visible = false;
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 

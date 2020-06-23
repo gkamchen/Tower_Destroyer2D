@@ -34,6 +34,8 @@ namespace GameServer
         private const int MESSAGE_TYPE_MATCH_DATA_SUCCESS = 17;
         private const int MESSAGE_TYPE_MATCH_DATA_WAITING = 18;
 
+        private const int MESSAGE_TYPE_MATCH_ENEMY_ATTACK = 19;
+
         static int totPlayersInMatch = 0;
         static List<ThreadClient> clients = new List<ThreadClient>();
         static void Main(string[] args)
