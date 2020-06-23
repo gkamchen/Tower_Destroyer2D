@@ -19,6 +19,8 @@ namespace GameClient
         private delegate void WaitPlayerDelegate();
         private delegate void InitializeMatrixDelegate(int[] itens, int isFirst);
         private event EventHandler EnemyAttack;
+        private MyButton[,] myButtons;
+
         private enum Type
         {
             Terra = 1,
@@ -146,6 +148,7 @@ namespace GameClient
                 this.Controls.Add(lblHorizontal);
                 //--------------------------------------------------------------------------------------------------------
                 btnX = 0;
+                myButtons = new MyButton[totalLinesSeparator, totalColumns];
                 btnY = btnHeight * (totalLinesSeparator + 1);
                 if (isFirst == 1)
                 {
@@ -200,6 +203,7 @@ namespace GameClient
                         }
 
                         this.Controls.Add(btn);
+                        myButtons[i, j] = btn;
 
                         indice++;
                         btnX += btnWidth;
