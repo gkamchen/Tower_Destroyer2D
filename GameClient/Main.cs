@@ -295,6 +295,12 @@ namespace GameClient
 							this.match.WaitPlayer();
 						}
 						break;
+					case MESSAGE_TYPE_MATCH_ENEMY_ATTACK:
+						if (this.match != null)
+						{
+							this.match.ShowMyButtonEnemyClick(message.GetInt32("line"),message.GetInt32("column"));
+						}
+						break;
 				}
 			}
 		}

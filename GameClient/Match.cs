@@ -17,11 +17,12 @@ namespace GameClient
 
         private delegate void SetVisibleDelegate(bool visible);
         private delegate void WaitPlayerDelegate();
+        private delegate void ShowMyButtonEnemyClickDelegate(int line, int column);
         private delegate void InitializeMatrixDelegate(int[] itens, int isFirst);
         private event EventHandler EnemyAttack;
         private MyButton[,] myButtons;
 
-        private enum Type
+        public enum Type
         {
             Terra = 1,
             Pedra = 2,
@@ -53,6 +54,45 @@ namespace GameClient
                 MessageBox.Show("Aguardando outro jogador, ao encontrar, a partida será iniciada!");
             }
         }
+        public void ShowMyButtonEnemyClick(int line, int column)
+        {
+            if (this.InvokeRequired == true)
+            {
+                this.Invoke(new ShowMyButtonEnemyClickDelegate(ShowMyButtonEnemyClick), new object[]
+                {
+                    line,
+                    column
+                });
+            }
+            else
+            {
+                MyButton btn = this.myButtons[line, column];
+
+                switch (btn.Type)
+                {
+                    case Type.Terra:
+                        btn.BackgroundImage = Resources.Terra;
+                        break;
+                    case Type.Pedra:
+                        btn.BackgroundImage = Resources.Pedra;
+                        break;
+                    case Type.Unidade:
+                        btn.Enabled = false;
+                        btn.BackgroundImage = Resources.Arregar_50;
+                        /*
+                        if (isFirst == 1)
+                        {
+                            btn.BackgroundImage = Resources.Unidade_Azul_Bottom;
+                        }
+                        else
+                        {
+                            btn.BackgroundImage = Resources.Unidade_Vermelha_Bottom;
+                        }
+                        */
+                        break;
+                }
+            }
+        }
 
         public void InitializeMatrix(int[] itens, int isFirst)
         {
@@ -66,12 +106,12 @@ namespace GameClient
             }
             else
             {
+                MyButton btn;
                 int btnWidth = 50;
                 int btnHeight = 50;
                 int btnX = 0;
                 int btnY = 0;
                 int indice = 0;
-                MyButton btn;
 
                 int totalLines = 14;
                 int totalColumns = 25;
@@ -95,6 +135,8 @@ namespace GameClient
                         btn.FlatAppearance.BorderSize = 0;
                         btn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
                         btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+                        btn.MouseEnter += new EventHandler(this.btn_MouseEnter);
+                        btn.MouseLeave += new EventHandler(this.btn_MouseLeave);
                         btn.Line = i;
                         btn.Column = j;
 
@@ -104,13 +146,13 @@ namespace GameClient
                             case (Int32)Type.Terra:
                                 btn.Click += (object sender, System.EventArgs e) =>
                                 {
-                                    Btn_Click_Enemy(sender, e, Type.Terra, btn.BackgroundImage = Resources.Terra);
+                                    Btn_Click_Enemy(sender, e, Resources.Terra);
                                 };
                                 break;
                             case (Int32)Type.Pedra:
                                 btn.Click += (object sender, System.EventArgs e) =>
                                 {
-                                    Btn_Click_Enemy(sender, e, Type.Pedra, btn.BackgroundImage = Resources.Pedra);
+                                    Btn_Click_Enemy(sender, e, Resources.Pedra);
                                 };
                                 break;
                             case (Int32)Type.Unidade:
@@ -118,15 +160,14 @@ namespace GameClient
                                 {
                                     if (isFirst == 0)
                                     {
-                                        Btn_Click_Enemy(sender, e, Type.Unidade, btn.BackgroundImage = Resources.Unidade_Azul_Top);
+                                        Btn_Click_Enemy(sender, e, Resources.Unidade_Azul_Top);
                                     }
                                     else
                                     {
-                                        Btn_Click_Enemy(sender, e, Type.Unidade, btn.BackgroundImage = Resources.Unidade_Vermelha_Top);
+                                        Btn_Click_Enemy(sender, e, Resources.Unidade_Vermelha_Top);
                                     }
                                 };
                                 break;
-
                         }
 
                         this.Controls.Add(btn);
@@ -138,12 +179,14 @@ namespace GameClient
                     btnX = 0;
                     btnY += btnHeight;
                 }
-
+                //-------------------------------------------------------------------------------------------------------
+                // Separador de campos
                 Label lblHorizontal = new Label();
                 lblHorizontal.Location = new Point(0, btnHeight * totalLinesSeparator);
                 lblHorizontal.Width = btnWidth * totalColumns;
                 lblHorizontal.Height = btnHeight;
-                lblHorizontal.BackColor = Color.FromArgb(21, 108, 153);
+                lblHorizontal.BackgroundImage = Resources.Lago;
+                lblHorizontal.BackgroundImageLayout = ImageLayout.Zoom;
 
                 this.Controls.Add(lblHorizontal);
                 //--------------------------------------------------------------------------------------------------------
@@ -172,33 +215,27 @@ namespace GameClient
                         btn.Line = i;
                         btn.Column = j;
 
+
                         // MEU CAMPO
                         switch (itens[indice])
                         {
                             case (Int32)Type.Terra:
-                                btn.Click += (object sender, System.EventArgs e) =>
-                                {
-                                    Btn_Click(sender, e, Type.Terra, btn.BackgroundImage = Resources.Terra);
-                                };
+                                btn.Type = Type.Terra;
                                 break;
                             case (Int32)Type.Pedra:
-                                btn.Click += (object sender, System.EventArgs e) =>
-                                {
-                                    Btn_Click(sender, e, Type.Pedra, btn.BackgroundImage = Resources.Pedra);
-                                };
+                                btn.Type = Type.Pedra;
                                 break;
                             case (Int32)Type.Unidade:
-                                btn.Click += (object sender, System.EventArgs e) =>
+                                btn.Enabled = true;
+                                btn.Type = Type.Unidade;
+                                if (isFirst == 1)
                                 {
-                                    if (isFirst == 1)
-                                    {
-                                        Btn_Click(sender, e, Type.Unidade, btn.BackgroundImage = Resources.Unidade_Azul_Bottom);
-                                    }
-                                    else
-                                    {
-                                        Btn_Click(sender, e, Type.Unidade, btn.BackgroundImage = Resources.Unidade_Vermelha_Bottom);
-                                    }
-                                };
+                                    btn.BackgroundImage = Resources.Unidade_Azul_Bottom;
+                                }
+                                else
+                                {
+                                    btn.BackgroundImage = Resources.Unidade_Vermelha_Bottom;
+                                }
                                 break;
                         }
 
@@ -211,6 +248,7 @@ namespace GameClient
 
                     btnX = 0;
                     btnY += btnHeight;
+
                 }
                 this.btnClose.Visible = true;
 
@@ -238,12 +276,14 @@ namespace GameClient
             ((MyButton)sender).BackgroundImage = image;
         }
 
-        private void Btn_Click_Enemy(object sender, System.EventArgs e, Type type, Image image)
+        private void Btn_Click_Enemy(object sender, System.EventArgs e, Image image)
         {
-            ((MyButton)sender).BackgroundImage = image;
-           
+
             if (this.EnemyAttack != null)
             {
+                ((MyButton)sender).BackgroundImage = image;
+                ((MyButton)sender).BackColor = Color.Transparent;
+                ((MyButton)sender).Enabled = false;
                 this.EnemyAttack.Invoke(this, new EnemyAttackEventArgs()
                 {
                     Line = ((MyButton)sender).Line,
@@ -251,7 +291,31 @@ namespace GameClient
                 });
             }
         }
+        private void btn_MouseEnter(object sender, System.EventArgs e)
+        {
+            MyButton enterButton = (MyButton)sender;
+            if (enterButton.Enabled == true)
+            {
+                enterButton.BackgroundImage = Resources.Fundo_Alvo;
+                enterButton.BackColor = Color.Red;
+                enterButton.FlatAppearance.MouseDownBackColor = Color.Red;
+                enterButton.FlatAppearance.MouseOverBackColor = Color.Red;
+            }
 
+        }
+
+        private void btn_MouseLeave(object sender, System.EventArgs e)
+        {
+            MyButton leaveMouseButton = (MyButton)sender;
+            if (leaveMouseButton.Enabled == true)
+            {
+                leaveMouseButton.BackgroundImage = Resources.Fundo;
+                leaveMouseButton.BackColor = Color.Transparent;
+                leaveMouseButton.FlatAppearance.MouseDownBackColor = Color.Transparent;
+                leaveMouseButton.FlatAppearance.MouseOverBackColor = Color.Transparent;
+            }
+            
+        }
         private void btnClose_Click(object sender, System.EventArgs e)
         {
             DialogResult resposta = MessageBox.Show("Você deseja realmente dar uma de cagão e desistir da partida?", "Surrender", MessageBoxButtons.YesNo);

@@ -143,63 +143,6 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\61143.gif" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\61150.gif" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Grass.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Potion %281%29.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Potion %282%29.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Potion %283%29.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Stone %281%29.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Stone %282%29.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Stone %283%29.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Stone %284%29.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Stone %285%29.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Stone %286%29.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Stone %287%29.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Unity1 %28Down%29.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Unity1 %28Up%29.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Unity2 %28Down%29.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Unity2 %28Up%29.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Unity3 %28Down%29.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Unity3 %28Up%29.png.png" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\Close_321.png" />
   </ItemGroup>
   <ItemGroup>
@@ -227,24 +170,6 @@
     <None Include="Resources\Save_32.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\Surpresa_120.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Potion %282%291.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Surpresa_1201.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Potion %281%291.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Potion %282%2911.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Surpresa_12011.png" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\Unidade_Vermelha_Top.png" />
   </ItemGroup>
   <ItemGroup>
@@ -264,6 +189,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Unidade_Vermelha_Bottom.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Lago.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Fundo_Alvo.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

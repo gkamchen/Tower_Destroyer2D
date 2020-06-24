@@ -646,9 +646,21 @@ namespace GameServer
                     case MESSAGE_TYPE_MATCH_ENEMY_ATTACK:
                         if (client != null)
                         {
+                            foreach (ThreadClient threadClient in clients)
+                            {
+                                if (threadClient.GetNumber() != client.GetNumber())
+                                {
+                                    Console.WriteLine($"Linha: {message.GetInt32("line")}");
+                                    Console.WriteLine($"Coluna: {message.GetInt32("column")}");
+                                    threadClient.SendMessage(new
+                                    {
+                                        type = MESSAGE_TYPE_MATCH_ENEMY_ATTACK,
+                                        line = message.GetInt32("line"),
+                                        column = message.GetInt32("column")
+                                    });
+                                }
+                            }
 
-                            Console.WriteLine($"Linha: {message.GetInt32("line")}");
-                            Console.WriteLine($"Coluna: {message.GetInt32("column")}");
                         }
                         break;
                 }
