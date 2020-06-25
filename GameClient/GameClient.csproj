@@ -196,5 +196,17 @@
   <ItemGroup>
     <None Include="Resources\Fundo_Alvo.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Unidade_Azul_Bottom_Queb.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Unidade_Azul_Top_Queb.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Unidade_Vermelha_Bottom_Queb.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Unidade_Vermelha_Top_Queb.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

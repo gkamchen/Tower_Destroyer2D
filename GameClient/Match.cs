@@ -21,7 +21,6 @@ namespace GameClient
         private delegate void InitializeMatrixDelegate(int[] itens, int isFirst);
         private event EventHandler EnemyAttack;
         private MyButton[,] myButtons;
-
         public enum Type
         {
             Terra = 1,
@@ -68,29 +67,9 @@ namespace GameClient
             {
                 MyButton btn = this.myButtons[line, column];
 
-                switch (btn.Type)
-                {
-                    case Type.Terra:
-                        btn.BackgroundImage = Resources.Terra;
-                        break;
-                    case Type.Pedra:
-                        btn.BackgroundImage = Resources.Pedra;
-                        break;
-                    case Type.Unidade:
-                        btn.Enabled = false;
-                        btn.BackgroundImage = Resources.Arregar_50;
-                        /*
-                        if (isFirst == 1)
-                        {
-                            btn.BackgroundImage = Resources.Unidade_Azul_Bottom;
-                        }
-                        else
-                        {
-                            btn.BackgroundImage = Resources.Unidade_Vermelha_Bottom;
-                        }
-                        */
-                        break;
-                }
+                btn.BackgroundImage = btn.Item;
+                
+
             }
         }
 
@@ -161,11 +140,11 @@ namespace GameClient
                                 {
                                     if (isFirst == 0)
                                     {
-                                        Btn_Click_Enemy(sender, e, Resources.Unidade_Azul_Top);
+                                        Btn_Click_Enemy(sender, e, Resources.Unidade_Azul_Top_Queb);
                                     }
                                     else
                                     {
-                                        Btn_Click_Enemy(sender, e, Resources.Unidade_Vermelha_Top);
+                                        Btn_Click_Enemy(sender, e, Resources.Unidade_Vermelha_Top_Queb);
                                     }
                                 };
                                 break;
@@ -215,6 +194,7 @@ namespace GameClient
                         btn.Enabled = false;
                         btn.Line = i;
                         btn.Column = j;
+                        
 
 
                         // MEU CAMPO
@@ -222,9 +202,11 @@ namespace GameClient
                         {
                             case (Int32)Type.Terra:
                                 btn.Type = Type.Terra;
+                                btn.Item = Resources.Terra;
                                 break;
                             case (Int32)Type.Pedra:
                                 btn.Type = Type.Pedra;
+                                btn.Item = Resources.Pedra;
                                 break;
                             case (Int32)Type.Unidade:
                                 btn.Enabled = true;
@@ -232,10 +214,12 @@ namespace GameClient
                                 if (isFirst == 1)
                                 {
                                     btn.BackgroundImage = Resources.Unidade_Azul_Bottom;
+                                    btn.Item = Resources.Unidade_Azul_Bottom_Queb;
                                 }
                                 else
                                 {
                                     btn.BackgroundImage = Resources.Unidade_Vermelha_Bottom;
+                                    btn.Item = Resources.Unidade_Vermelha_Bottom_Queb;
                                 }
                                 break;
                         }

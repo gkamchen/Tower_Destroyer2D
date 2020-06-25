@@ -213,9 +213,29 @@ namespace GameClient.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Unidade_Azul_Bottom_Queb {
+            get {
+                object obj = ResourceManager.GetObject("Unidade_Azul_Bottom_Queb", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Unidade_Azul_Top {
             get {
                 object obj = ResourceManager.GetObject("Unidade_Azul_Top", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Unidade_Azul_Top_Queb {
+            get {
+                object obj = ResourceManager.GetObject("Unidade_Azul_Top_Queb", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -233,9 +253,29 @@ namespace GameClient.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Unidade_Vermelha_Bottom_Queb {
+            get {
+                object obj = ResourceManager.GetObject("Unidade_Vermelha_Bottom_Queb", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Unidade_Vermelha_Top {
             get {
                 object obj = ResourceManager.GetObject("Unidade_Vermelha_Top", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Unidade_Vermelha_Top_Queb {
+            get {
+                object obj = ResourceManager.GetObject("Unidade_Vermelha_Top_Queb", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
