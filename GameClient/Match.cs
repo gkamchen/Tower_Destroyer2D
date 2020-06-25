@@ -51,7 +51,7 @@ namespace GameClient
             }
             else
             {
-                MessageBox.Show("Aguardando outro jogador, ao encontrar, a partida será iniciada!");
+                //MessageBox.Show("Aguardando outro jogador, ao encontrar, a partida será iniciada!");
             }
         }
         public void ShowMyButtonEnemyClick(int line, int column)
@@ -110,7 +110,6 @@ namespace GameClient
                 int btnWidth = 50;
                 int btnHeight = 50;
                 int btnX = 0;
-                int btnY = 0;
                 int indice = 0;
 
                 int totalLines = 14;
@@ -120,6 +119,8 @@ namespace GameClient
                 {
                     indice = (totalLines * totalColumns) / 2;
                 }
+
+                int btnY = btnHeight * (totalLinesSeparator - 1);
 
                 // CAMPO DO INIMIGO
                 for (int i = 0; i < totalLinesSeparator; i++)
@@ -177,7 +178,7 @@ namespace GameClient
                     }
 
                     btnX = 0;
-                    btnY += btnHeight;
+                    btnY -= btnHeight;
                 }
                 //-------------------------------------------------------------------------------------------------------
                 // Separador de campos
@@ -252,7 +253,6 @@ namespace GameClient
                 }
                 this.btnClose.Visible = true;
 
-                MessageBox.Show("Que comecem os jogos!");
             }
 
         }
@@ -314,7 +314,7 @@ namespace GameClient
                 leaveMouseButton.FlatAppearance.MouseDownBackColor = Color.Transparent;
                 leaveMouseButton.FlatAppearance.MouseOverBackColor = Color.Transparent;
             }
-            
+
         }
         private void btnClose_Click(object sender, System.EventArgs e)
         {
