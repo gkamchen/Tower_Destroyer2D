@@ -650,8 +650,6 @@ namespace GameServer
                             {
                                 if (threadClient.GetNumber() != client.GetNumber())
                                 {
-                                    Console.WriteLine($"Linha: {message.GetInt32("line")}");
-                                    Console.WriteLine($"Coluna: {message.GetInt32("column")}");
                                     threadClient.SendMessage(new
                                     {
                                         type = MESSAGE_TYPE_MATCH_ENEMY_ATTACK,

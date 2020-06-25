@@ -68,7 +68,7 @@ namespace GameClient
                 MyButton btn = this.myButtons[line, column];
 
                 btn.BackgroundImage = btn.Item;
-                
+                this.Enabled = true;
 
             }
         }
@@ -97,6 +97,10 @@ namespace GameClient
                 if (isFirst == 1)
                 {
                     indice = (totalLines * totalColumns) / 2;
+                }
+                else
+                {
+                    this.Enabled = false;
                 }
 
                 int btnY = btnHeight * (totalLinesSeparator - 1);
@@ -273,6 +277,7 @@ namespace GameClient
                     Line = ((MyButton)sender).Line,
                     Column = ((MyButton)sender).Column
                 });
+                this.Enabled = false;
             }
         }
         private void btn_MouseEnter(object sender, System.EventArgs e)
