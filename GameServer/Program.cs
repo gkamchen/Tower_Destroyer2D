@@ -36,6 +36,8 @@ namespace GameServer
 
         private const int MESSAGE_TYPE_MATCH_ENEMY_ATTACK = 19;
 
+        private const int MESSAGE_TYPE_MATCH_END_GAME = 20;
+
         static int totPlayersInMatch = 0;
         static List<ThreadClient> clients = new List<ThreadClient>();
         static void Main(string[] args)
@@ -655,6 +657,33 @@ namespace GameServer
                                         type = MESSAGE_TYPE_MATCH_ENEMY_ATTACK,
                                         line = message.GetInt32("line"),
                                         column = message.GetInt32("column")
+                                    });
+                                }
+                            }
+
+                        }
+                        break;
+                    case MESSAGE_TYPE_MATCH_END_GAME:
+                        if (client != null)
+                        {
+                            foreach (ThreadClient threadClient in clients)
+                            {
+                                if (threadClient.GetNumber() != client.GetNumber())
+                                {
+                                    threadClient.SendMessage(new
+                                    {
+                                        type = MESSAGE_TYPE_MATCH_END_GAME,
+                                        winner = threadClient.GetNumber(),
+                                        loser = client.GetNumber()
+                                    });
+                                }
+                                else
+                                {
+                                    client.SendMessage(new
+                                    {
+                                        type = MESSAGE_TYPE_MATCH_END_GAME,
+                                        winner = threadClient.GetNumber(),
+                                        loser = client.GetNumber()
                                     });
                                 }
                             }

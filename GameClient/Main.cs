@@ -36,6 +36,8 @@ namespace GameClient
 
 		private const int MESSAGE_TYPE_MATCH_ENEMY_ATTACK = 19;
 
+		private const int MESSAGE_TYPE_MATCH_END_GAME = 20;
+
 		private int userId;
 		private string userName;
 		private string name;
