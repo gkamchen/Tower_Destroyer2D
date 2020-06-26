@@ -22,6 +22,7 @@ namespace GameClient
         private event EventHandler EnemyAttack;
         private MyButton[,] myButtons;
         private int myUnities = 40, enemyUnities = 40;
+        private int isFirst;
         public enum Type
         {
             Terra = 1,
@@ -75,6 +76,14 @@ namespace GameClient
                     this.myUnities--;
                     lblMyUnities.Text = $"Restam: {myUnities}";
                 }
+                if(isFirst == 1)
+                {
+                    pbTeamTurn.BackgroundImage = Resources.Bandeira_Azul_30;
+                }
+                else
+                {
+                    pbTeamTurn.BackgroundImage = Resources.Bandeira_Vermelha_30;
+                }
 
             }
         }
@@ -91,6 +100,7 @@ namespace GameClient
             }
             else
             {
+                this.isFirst = isFirst;
                 MyButton btn;
                 int btnWidth = 50;
                 int btnHeight = 50;
@@ -306,7 +316,14 @@ namespace GameClient
                     Column = ((MyButton)sender).Column
                 });
                 this.Enabled = false;
-                
+                if (isFirst == 0)
+                {
+                    pbTeamTurn.BackgroundImage = Resources.Bandeira_Azul_30;
+                }
+                else
+                {
+                    pbTeamTurn.BackgroundImage = Resources.Bandeira_Vermelha_30;
+                }
             }
         }
         private void btn_MouseEnter(object sender, System.EventArgs e)
