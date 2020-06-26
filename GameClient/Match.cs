@@ -104,7 +104,7 @@ namespace GameClient
                 MyButton btn;
                 int btnWidth = 50;
                 int btnHeight = 50;
-                int btnX = 0;
+                
                 int indice = 0;
 
                 int totalLines = 14;
@@ -134,7 +134,7 @@ namespace GameClient
                     pbUnityTop.BackgroundImage = Resources.Unidade_Azul_Sem_Terra_Top;
                     pbUnityBottom.BackgroundImage = Resources.Unidade_Vermelha_Sem_Terra_Bottom;
                 }
-
+                int btnX = btnWidth * (totalColumns-1);
                 int btnY = btnHeight * (totalLinesSeparator - 1);
 
                 // CAMPO DO INIMIGO
@@ -191,10 +191,10 @@ namespace GameClient
                         this.Controls.Add(btn);
 
                         indice++;
-                        btnX += btnWidth;
+                        btnX -= btnWidth;
                     }
 
-                    btnX = 0;
+                    btnX = btnWidth * (totalColumns - 1);
                     btnY -= btnHeight;
                 }
                 //-------------------------------------------------------------------------------------------------------
