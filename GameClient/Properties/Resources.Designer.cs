@@ -83,6 +83,46 @@ namespace GameClient.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Bandeira_Azul {
+            get {
+                object obj = ResourceManager.GetObject("Bandeira_Azul", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Bandeira_Azul_30 {
+            get {
+                object obj = ResourceManager.GetObject("Bandeira_Azul_30", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Bandeira_Vermelha {
+            get {
+                object obj = ResourceManager.GetObject("Bandeira_Vermelha", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Bandeira_Vermelha_30 {
+            get {
+                object obj = ResourceManager.GetObject("Bandeira_Vermelha_30", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Check_32 {
             get {
                 object obj = ResourceManager.GetObject("Check_32", resourceCulture);
@@ -223,6 +263,26 @@ namespace GameClient.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Unidade_Azul_Sem_Terra_Bottom {
+            get {
+                object obj = ResourceManager.GetObject("Unidade_Azul_Sem_Terra_Bottom", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Unidade_Azul_Sem_Terra_Top {
+            get {
+                object obj = ResourceManager.GetObject("Unidade_Azul_Sem_Terra_Top", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Unidade_Azul_Top {
             get {
                 object obj = ResourceManager.GetObject("Unidade_Azul_Top", resourceCulture);
@@ -256,6 +316,26 @@ namespace GameClient.Properties {
         internal static System.Drawing.Bitmap Unidade_Vermelha_Bottom_Queb {
             get {
                 object obj = ResourceManager.GetObject("Unidade_Vermelha_Bottom_Queb", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Unidade_Vermelha_Sem_Terra_Bottom {
+            get {
+                object obj = ResourceManager.GetObject("Unidade_Vermelha_Sem_Terra_Bottom", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Unidade_Vermelha_Sem_Terra_Top {
+            get {
+                object obj = ResourceManager.GetObject("Unidade_Vermelha_Sem_Terra_Top", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

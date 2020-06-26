@@ -21,6 +21,7 @@ namespace GameClient
         private delegate void InitializeMatrixDelegate(int[] itens, int isFirst);
         private event EventHandler EnemyAttack;
         private MyButton[,] myButtons;
+        private int myUnities = 40, enemyUnities = 40;
         public enum Type
         {
             Terra = 1,
@@ -69,6 +70,10 @@ namespace GameClient
 
                 btn.BackgroundImage = btn.Item;
                 this.Enabled = true;
+                if(btn.Type == Type.Unidade)
+                {
+                    this.myUnities--;
+                }
 
             }
         }
@@ -94,13 +99,29 @@ namespace GameClient
                 int totalLines = 14;
                 int totalColumns = 25;
                 int totalLinesSeparator = totalLines / 2;
+                
+
                 if (isFirst == 1)
                 {
                     indice = (totalLines * totalColumns) / 2;
+                    pbTeamTurn.BackgroundImage = Resources.Bandeira_Azul_30;
+
+                    pbFlagTeamTop.BackgroundImage = Resources.Bandeira_Vermelha;
+                    pbFlagTeamBottom.BackgroundImage = Resources.Bandeira_Azul;
+
+                    pbUnityBottom.BackgroundImage = Resources.Unidade_Azul_Sem_Terra_Bottom;
+                    pbUnityTop.BackgroundImage = Resources.Unidade_Vermelha_Sem_Terra_Top;
                 }
                 else
                 {
                     this.Enabled = false;
+                    pbTeamTurn.BackgroundImage = Resources.Bandeira_Azul_30;
+
+                    pbFlagTeamTop.BackgroundImage = Resources.Bandeira_Azul;
+                    pbFlagTeamBottom.BackgroundImage = Resources.Bandeira_Vermelha;
+
+                    pbUnityTop.BackgroundImage = Resources.Unidade_Azul_Sem_Terra_Top;
+                    pbUnityBottom.BackgroundImage = Resources.Unidade_Vermelha_Sem_Terra_Bottom;
                 }
 
                 int btnY = btnHeight * (totalLinesSeparator - 1);
@@ -140,15 +161,19 @@ namespace GameClient
                                 };
                                 break;
                             case (Int32)Type.Unidade:
+                                
+                                lblEnemyUnities.Text = $"Restam: {enemyUnities}";
                                 btn.Click += (object sender, System.EventArgs e) =>
                                 {
                                     if (isFirst == 0)
                                     {
                                         Btn_Click_Enemy(sender, e, Resources.Unidade_Azul_Top_Queb);
+                                        this.enemyUnities--;
                                     }
                                     else
                                     {
                                         Btn_Click_Enemy(sender, e, Resources.Unidade_Vermelha_Top_Queb);
+                                        this.enemyUnities--;
                                     }
                                 };
                                 break;
@@ -215,6 +240,7 @@ namespace GameClient
                             case (Int32)Type.Unidade:
                                 btn.Enabled = true;
                                 btn.Type = Type.Unidade;
+                                lblMyUnities.Text = $"Restam: {myUnities}";
                                 if (isFirst == 1)
                                 {
                                     btn.BackgroundImage = Resources.Unidade_Azul_Bottom;
@@ -278,6 +304,16 @@ namespace GameClient
                     Column = ((MyButton)sender).Column
                 });
                 this.Enabled = false;
+                if(pbTeamTurn.BackgroundImage == Resources.Bandeira_Vermelha_30)
+                {
+                    pbTeamTurn.BackgroundImage = Resources.Bandeira_Azul_30;
+
+                }
+                else
+                {
+                    pbTeamTurn.BackgroundImage = Resources.Bandeira_Vermelha_30;
+
+                }
             }
         }
         private void btn_MouseEnter(object sender, System.EventArgs e)

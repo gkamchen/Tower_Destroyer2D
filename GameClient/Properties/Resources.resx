@@ -118,26 +118,8 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="Add_32" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Add_32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Login_32" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Login_32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Save_32" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Save_32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Arregar_50" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Arregar_50.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Send_52" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Send_52.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Logoff_32" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Logoff_32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Check_32" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Check_32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Lago" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Lago.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Recovery_32" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Recovery_32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -145,43 +127,85 @@
   <data name="Close_321" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Close_321.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Fundo" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Fundo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Logoff_32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Logoff_32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Pedra" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Pedra.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Terra" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Terra.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Unidade_Azul_Bottom" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Unidade_Azul_Bottom.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Unidade_Azul_Top" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Unidade_Azul_Top.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Unidade_Vermelha_Bottom" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Unidade_Vermelha_Bottom.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Unidade_Vermelha_Top" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Unidade_Vermelha_Top.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Lago" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Lago.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Fundo_Alvo" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Fundo_Alvo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Unidade_Azul_Bottom_Queb" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Unidade_Azul_Bottom_Queb.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Unidade_Azul_Top_Queb" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Unidade_Azul_Top_Queb.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Check_32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Check_32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Unidade_Vermelha_Bottom_Queb" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Unidade_Vermelha_Bottom_Queb.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Unidade_Vermelha_Top_Queb" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Unidade_Vermelha_Top_Queb.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Save_32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Save_32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Unidade_Azul_Bottom_Queb" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Unidade_Azul_Bottom_Queb.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Pedra" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Pedra.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Unidade_Vermelha_Bottom" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Unidade_Vermelha_Bottom.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Fundo_Alvo" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Fundo_Alvo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Arregar_50" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Arregar_50.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Unidade_Azul_Top" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Unidade_Azul_Top.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Add_32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Add_32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Login_32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Login_32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Unidade_Vermelha_Top" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Unidade_Vermelha_Top.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Send_52" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Send_52.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Unidade_Azul_Top_Queb" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Unidade_Azul_Top_Queb.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Terra" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Terra.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Fundo" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Fundo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Unidade_Azul_Bottom" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Unidade_Azul_Bottom.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Bandeira_Azul" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Bandeira_Azul.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Bandeira_Azul_30" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Bandeira_Azul_30.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Bandeira_Vermelha" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Bandeira_Vermelha.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Bandeira_Vermelha_30" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Bandeira_Vermelha_30.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Unidade_Azul_Sem_Terra_Bottom" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Unidade_Azul_Sem_Terra_Bottom.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Unidade_Azul_Sem_Terra_Top" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Unidade_Azul_Sem_Terra_Top.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Unidade_Vermelha_Sem_Terra_Bottom" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Unidade_Vermelha_Sem_Terra_Bottom.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Unidade_Vermelha_Sem_Terra_Top" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Unidade_Vermelha_Sem_Terra_Top.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

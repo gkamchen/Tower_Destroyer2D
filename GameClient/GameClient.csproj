@@ -208,5 +208,29 @@
   <ItemGroup>
     <None Include="Resources\Unidade_Vermelha_Top_Queb.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Bandeira_Azul.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Bandeira_Vermelha_30.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Bandeira_Azul_30.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Bandeira_Vermelha.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Unidade_Vermelha_Sem_Terra_Bottom.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Unidade_Vermelha_Sem_Terra_Top.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Unidade_Azul_Sem_Terra_Bottom.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Unidade_Azul_Sem_Terra_Top.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
