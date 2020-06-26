@@ -73,6 +73,7 @@ namespace GameClient
                 if(btn.Type == Type.Unidade)
                 {
                     this.myUnities--;
+                    lblMyUnities.Text = $"Restam: {myUnities}";
                 }
 
             }
@@ -151,13 +152,13 @@ namespace GameClient
                             case (Int32)Type.Terra:
                                 btn.Click += (object sender, System.EventArgs e) =>
                                 {
-                                    Btn_Click_Enemy(sender, e, Resources.Terra);
+                                    Btn_Click_Enemy(sender, e, Resources.Terra, false);
                                 };
                                 break;
                             case (Int32)Type.Pedra:
                                 btn.Click += (object sender, System.EventArgs e) =>
                                 {
-                                    Btn_Click_Enemy(sender, e, Resources.Pedra);
+                                    Btn_Click_Enemy(sender, e, Resources.Pedra, false);
                                 };
                                 break;
                             case (Int32)Type.Unidade:
@@ -167,13 +168,11 @@ namespace GameClient
                                 {
                                     if (isFirst == 0)
                                     {
-                                        Btn_Click_Enemy(sender, e, Resources.Unidade_Azul_Top_Queb);
-                                        this.enemyUnities--;
+                                        Btn_Click_Enemy(sender, e, Resources.Unidade_Azul_Top_Queb, true);
                                     }
                                     else
                                     {
-                                        Btn_Click_Enemy(sender, e, Resources.Unidade_Vermelha_Top_Queb);
-                                        this.enemyUnities--;
+                                        Btn_Click_Enemy(sender, e, Resources.Unidade_Vermelha_Top_Queb, true);
                                     }
                                 };
                                 break;
@@ -223,8 +222,6 @@ namespace GameClient
                         btn.Enabled = false;
                         btn.Line = i;
                         btn.Column = j;
-                        
-
 
                         // MEU CAMPO
                         switch (itens[indice])
@@ -290,7 +287,7 @@ namespace GameClient
             ((MyButton)sender).BackgroundImage = image;
         }
 
-        private void Btn_Click_Enemy(object sender, System.EventArgs e, Image image)
+        private void Btn_Click_Enemy(object sender, System.EventArgs e, Image image, bool isUnity)
         {
 
             if (this.EnemyAttack != null)
@@ -298,22 +295,18 @@ namespace GameClient
                 ((MyButton)sender).BackgroundImage = image;
                 ((MyButton)sender).BackColor = Color.Transparent;
                 ((MyButton)sender).Enabled = false;
+                if(isUnity == true)
+                {
+                    enemyUnities--;
+                    lblEnemyUnities.Text = $"Restam: {enemyUnities}";
+                }
                 this.EnemyAttack.Invoke(this, new EnemyAttackEventArgs()
                 {
                     Line = ((MyButton)sender).Line,
                     Column = ((MyButton)sender).Column
                 });
                 this.Enabled = false;
-                if(pbTeamTurn.BackgroundImage == Resources.Bandeira_Vermelha_30)
-                {
-                    pbTeamTurn.BackgroundImage = Resources.Bandeira_Azul_30;
-
-                }
-                else
-                {
-                    pbTeamTurn.BackgroundImage = Resources.Bandeira_Vermelha_30;
-
-                }
+                
             }
         }
         private void btn_MouseEnter(object sender, System.EventArgs e)
