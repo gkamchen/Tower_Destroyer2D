@@ -1,8 +1,10 @@
 ﻿using Base;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Data.SqlClient;
 using System.Linq;
+using System.Security.Policy;
 
 namespace GameServer
 {
@@ -389,6 +391,93 @@ namespace GameServer
 
             return result;
         }
+        static bool EndMatch(int idPlayer1, int idPlayer2, string startTime, char sitPlayer1, char sitPlayer2, int expPlayer1, int expPlayer2)
+        {
+            bool result = false;
+
+            using (SqlConnection connection = new SqlConnection(@"Data Source=localhost\SQLEXPRESS;Initial Catalog=game;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False"))
+            {
+                bool openConnection = false;
+
+                try
+                {
+                    connection.Open();
+                    openConnection = true;
+                }
+                catch
+                {
+                    result = false;
+                }
+                if (openConnection == true)
+                {
+                    SqlCommand command = connection.CreateCommand();
+                    SqlTransaction transaction = connection.BeginTransaction("EndMatch");
+
+                    command.Connection = connection;
+                    command.Transaction = transaction;
+
+                    command.CommandText = @"
+						INSERT match (startTime, endTime) VALUES
+						(@startTime, CURRENT_TIMESTAMP);
+
+                        SELECT SCOPE_IDENTITY();";
+
+                    command.Parameters.Clear();
+
+                    command.Parameters.Add(new SqlParameter("startTime", startTime));
+
+                    Int32? idMatch = null;
+
+                    try
+                    {
+                        Object objIdMatch = command.ExecuteScalar();
+                        idMatch = (objIdMatch == null || Convert.IsDBNull(objIdMatch)) ? (Int32?)null : Convert.ToInt32(objIdMatch);
+                    }
+                    catch (Exception ex)
+                    {
+                        result = false;
+                    }
+
+                    if (idMatch != null)
+                    {
+                        command.CommandText = @"
+						INSERT plyerMatch (idPlayer, idMatch, expPlayer, winner) VALUES
+						(@idPlayer1, @idMatch, @expPlayer1, @sitPlayer1);
+
+                        INSERT plyerMatch (idPlayer, idMatch, expPlayer, winner) VALUES
+						(@idPlayer2, @idMatch, @expPlayer2, @sitPlayer2);";
+
+                        command.Parameters.Clear();
+
+                        command.Parameters.Add(new SqlParameter("idPlayer1", idPlayer1));
+                        command.Parameters.Add(new SqlParameter("idMatch", idMatch));
+                        command.Parameters.Add(new SqlParameter("expPlayer1", expPlayer1));
+                        command.Parameters.Add(new SqlParameter("sitPlayer1", sitPlayer1));
+
+                        command.Parameters.Add(new SqlParameter("idPlayer2", idPlayer2));
+                        command.Parameters.Add(new SqlParameter("idMatch", idMatch));
+                        command.Parameters.Add(new SqlParameter("expPlayer2", expPlayer2));
+                        command.Parameters.Add(new SqlParameter("sitPlayer2", sitPlayer2));
+
+                        try
+                        {
+                            command.ExecuteNonQuery();
+                            transaction.Commit();
+                            result = true;
+                        }
+                        catch (Exception ex)
+                        {
+                            transaction.Rollback();
+                            result = false;
+                        }
+                    }
+
+                    connection.Close();
+                }
+            }
+
+            return result;
+        }
         static void StartMatch()
         {
             int isFirst = 1;
@@ -405,6 +494,7 @@ namespace GameServer
 
                 isFirst = 0;
             }
+
         }
         static void OnClientReceiveMessage(object sender, EventArgs eventArgs)
         {
