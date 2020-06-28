@@ -163,6 +163,16 @@ namespace GameClient.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Fundo_Red_Blue {
+            get {
+                object obj = ResourceManager.GetObject("Fundo_Red_Blue", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Lago {
             get {
                 object obj = ResourceManager.GetObject("Lago", resourceCulture);

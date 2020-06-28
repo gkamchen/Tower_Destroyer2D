@@ -19,6 +19,8 @@ namespace GameClient
         private delegate void WaitPlayerDelegate();
         private delegate void ShowMyButtonEnemyClickDelegate(int line, int column);
         private delegate void InitializeMatrixDelegate(int[] itens, int isFirst);
+        private delegate void EndGameDelegate(int myUnities, int enemyUnities, int isWinner);
+        private event EventHandler EndGame;
         private event EventHandler EnemyAttack;
         private MyButton[,] myButtons;
         private int myUnities = 40, enemyUnities = 40;
@@ -31,10 +33,11 @@ namespace GameClient
             Unidade = 4
         }
 
-        public Match(EventHandler EnemyAttack)
+        public Match(EventHandler EnemyAttack, EventHandler EndGame)
         {
             InitializeComponent();
             this.EnemyAttack = EnemyAttack;
+            this.EndGame = EndGame;
         }
 
         private int[] InitializeArrayWithNoDuplicates(int size)
@@ -71,12 +74,27 @@ namespace GameClient
 
                 btn.BackgroundImage = btn.Item;
                 this.Enabled = true;
-                if(btn.Type == Type.Unidade)
+                if (btn.Type == Type.Unidade)
                 {
                     this.myUnities--;
-                    lblMyUnities.Text = $"Restam: {myUnities}";
+                    if (this.myUnities == 39)
+                    {
+                        if (this.EndGame != null)
+                        {
+                            myUnities = 0;
+                            this.EndGame.Invoke(this, new EndGameEventArgs()
+                            {
+                                MyUnities = this.myUnities,
+                                EnemyUnities = this.enemyUnities
+                            });
+                        }
+                    }
+                    else
+                    {
+                        lblMyUnities.Text = $"Restam: {myUnities}";
+                    }
                 }
-                if(isFirst == 1)
+                if (isFirst == 1)
                 {
                     pbTeamTurn.BackgroundImage = Resources.Bandeira_Azul_30;
                 }
@@ -86,7 +104,34 @@ namespace GameClient
                 }
 
             }
+
         }
+        public void EndGameDel(int myUnities, int enemyUnities, int isWinner)
+        {
+            if (this.InvokeRequired == true)
+            {
+                this.Invoke(new EndGameDelegate(EndGameDel), new object[]
+                {
+                    myUnities,
+                    enemyUnities,
+                    isWinner
+                });
+            }
+            else
+            {
+                if (this.myUnities == myUnities)
+                {
+                    MessageBox.Show("Você perdeu");
+                    this.Visible = false;
+                }
+                else
+                {
+                    MessageBox.Show("Você ganhou");
+                    this.Visible = false;
+                }
+            }
+        }
+
 
         public void InitializeMatrix(int[] itens, int isFirst)
         {
@@ -104,13 +149,13 @@ namespace GameClient
                 MyButton btn;
                 int btnWidth = 50;
                 int btnHeight = 50;
-                
+
                 int indice = 0;
 
                 int totalLines = 14;
                 int totalColumns = 25;
                 int totalLinesSeparator = totalLines / 2;
-                
+
 
                 if (isFirst == 1)
                 {
@@ -134,7 +179,7 @@ namespace GameClient
                     pbUnityTop.BackgroundImage = Resources.Unidade_Azul_Sem_Terra_Top;
                     pbUnityBottom.BackgroundImage = Resources.Unidade_Vermelha_Sem_Terra_Bottom;
                 }
-                int btnX = btnWidth * (totalColumns-1);
+                int btnX = btnWidth * (totalColumns - 1);
                 int btnY = btnHeight * (totalLinesSeparator - 1);
 
                 // CAMPO DO INIMIGO
@@ -172,7 +217,7 @@ namespace GameClient
                                 };
                                 break;
                             case (Int32)Type.Unidade:
-                                
+
                                 lblEnemyUnities.Text = $"Restam: {enemyUnities}";
                                 btn.Click += (object sender, System.EventArgs e) =>
                                 {
@@ -305,10 +350,12 @@ namespace GameClient
                 ((MyButton)sender).BackgroundImage = image;
                 ((MyButton)sender).BackColor = Color.Transparent;
                 ((MyButton)sender).Enabled = false;
-                if(isUnity == true)
+                if (isUnity == true)
                 {
                     enemyUnities--;
-                    lblEnemyUnities.Text = $"Restam: {enemyUnities}";
+
+                        lblEnemyUnities.Text = $"Restam: {enemyUnities}";
+                    
                 }
                 this.EnemyAttack.Invoke(this, new EnemyAttackEventArgs()
                 {
@@ -357,9 +404,18 @@ namespace GameClient
 
             if (resposta == DialogResult.Yes)
             {
-                this.Visible = false;
+                if (this.EndGame != null)
+                {
+                    myUnities = 0;
+                    this.EndGame.Invoke(this, new EndGameEventArgs()
+                    {
+                        MyUnities = this.myUnities,
+                        EnemyUnities = this.enemyUnities
+                    });
+                }
             }
-
         }
+
     }
 }
+

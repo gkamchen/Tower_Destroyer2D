@@ -3,6 +3,7 @@ using System.Windows.Forms;
 using GameClient.EventArgs;
 using GameClient;
 using System;
+using GameClient.Properties;
 
 namespace GameClient
 {
@@ -54,6 +55,7 @@ namespace GameClient
 		{
 			InitializeComponent();
 			menuBar.Visible = false;
+			this.BackgroundImage = Resources.Fundo_Red_Blue;
 		}
 		protected override void OnClosed(System.EventArgs e)
 		{
@@ -94,7 +96,7 @@ namespace GameClient
 				this.register = new Register(this.BtnCancelOnClick, this.BtnSaveOnClick);
 				this.chat = new Chat(this.BtnSendOnClick);
 				this.recovery = new Recovery(this.BtnCancelOnClick, this.BtnRecoveryOnClick);
-				this.match = new Match(this.EnemyAttack);
+				this.match = new Match(this.EnemyAttack, this.EndGame);
 
 				this.login.MdiParent = this;
 				this.chat.MdiParent = this;
@@ -127,6 +129,20 @@ namespace GameClient
 					type = MESSAGE_TYPE_MATCH_ENEMY_ATTACK,
 					line = enemyAttackEventArgs.Line,
 					column = enemyAttackEventArgs.Column
+				});
+			}
+		}
+		private void EndGame(object sender, System.EventArgs eventArgs)
+		{
+			EndGameEventArgs endGameEventArgs = eventArgs as EndGameEventArgs;
+
+			if (endGameEventArgs != null && this.client != null)
+			{
+				this.client.SendMessage(new
+				{
+					type = MESSAGE_TYPE_MATCH_END_GAME,
+					myUnities = endGameEventArgs.MyUnities,
+					enemyUnities = endGameEventArgs.EnemyUnities
 				});
 			}
 		}
@@ -256,8 +272,6 @@ namespace GameClient
 
 							this.login.Clear();
 							this.login.SetVisible(false);
-							//Chamar chat direto
-							//this.chat.SetVisible(true, this.name);  // Comentado
 							this.SetVisibleMenuBar(true);
 
 						}
@@ -301,6 +315,12 @@ namespace GameClient
 						if (this.match != null)
 						{
 							this.match.ShowMyButtonEnemyClick(message.GetInt32("line"),message.GetInt32("column"));
+						}
+						break;
+					case MESSAGE_TYPE_MATCH_END_GAME:
+						if (this.match != null)
+						{
+							this.match.EndGameDel(message.GetInt32("myUnities"), message.GetInt32("enemyUnities"), message.GetInt32("isWinner"));
 						}
 						break;
 				}

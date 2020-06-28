@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data.SqlClient;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Security.Policy;
 
 namespace GameServer
@@ -418,13 +419,13 @@ namespace GameServer
 
                     command.CommandText = @"
 						INSERT match (startTime, endTime) VALUES
-						(@startTime, CURRENT_TIMESTAMP);
+						(CURRENT_TIMESTAMP, CURRENT_TIMESTAMP);
 
                         SELECT SCOPE_IDENTITY();";
 
                     command.Parameters.Clear();
 
-                    command.Parameters.Add(new SqlParameter("startTime", startTime));
+                    //command.Parameters.Add(new SqlParameter("startTime", startTime));
 
                     Int32? idMatch = null;
 
@@ -440,6 +441,7 @@ namespace GameServer
 
                     if (idMatch != null)
                     {
+                        int idMatchNew = (int)idMatch;
                         command.CommandText = @"
 						INSERT plyerMatch (idPlayer, idMatch, expPlayer, winner) VALUES
 						(@idPlayer1, @idMatch, @expPlayer1, @sitPlayer1);
@@ -450,12 +452,12 @@ namespace GameServer
                         command.Parameters.Clear();
 
                         command.Parameters.Add(new SqlParameter("idPlayer1", idPlayer1));
-                        command.Parameters.Add(new SqlParameter("idMatch", idMatch));
+                        command.Parameters.Add(new SqlParameter("idMatch", idMatchNew));
                         command.Parameters.Add(new SqlParameter("expPlayer1", expPlayer1));
                         command.Parameters.Add(new SqlParameter("sitPlayer1", sitPlayer1));
 
                         command.Parameters.Add(new SqlParameter("idPlayer2", idPlayer2));
-                        command.Parameters.Add(new SqlParameter("idMatch", idMatch));
+                        command.Parameters.Add(new SqlParameter("idMatch", idMatchNew));
                         command.Parameters.Add(new SqlParameter("expPlayer2", expPlayer2));
                         command.Parameters.Add(new SqlParameter("sitPlayer2", sitPlayer2));
 
@@ -754,28 +756,40 @@ namespace GameServer
                         }
                         break;
                     case MESSAGE_TYPE_MATCH_END_GAME:
+                        int isWinner = 0, expPlayer1 = 0, expPlayer2 = 0;
+                        char sitPlayer1 = 'N', sitPlayer2 = 'N';
+
                         if (client != null)
                         {
                             foreach (ThreadClient threadClient in clients)
                             {
-                                if (threadClient.GetNumber() != client.GetNumber())
+                                if (message.GetInt32("myUnities") != 0)
                                 {
-                                    threadClient.SendMessage(new
-                                    {
-                                        type = MESSAGE_TYPE_MATCH_END_GAME,
-                                        winner = threadClient.GetNumber(),
-                                        loser = client.GetNumber()
-                                    });
+                                    isWinner = 1;
+                                }
+                                threadClient.SendMessage(new
+                                {
+                                    type = MESSAGE_TYPE_MATCH_END_GAME,
+                                    myUnities = message.GetInt32("myUnities"),
+                                    enemyUnities = message.GetInt32("enemyUnities"),
+                                    isWinner = isWinner
+                                });
+                            }
+                            if (client.GetNumber() % 2 == 1)
+                            {
+                                if (isWinner == 1)
+                                {
+                                    sitPlayer1 = 'S';
+                                    expPlayer1 = 100;
+                                    expPlayer2 = 20;
                                 }
                                 else
                                 {
-                                    client.SendMessage(new
-                                    {
-                                        type = MESSAGE_TYPE_MATCH_END_GAME,
-                                        winner = threadClient.GetNumber(),
-                                        loser = client.GetNumber()
-                                    });
+                                    sitPlayer2 = 'S';
+                                    expPlayer1 = 20;
+                                    expPlayer2 = 100;
                                 }
+                                EndMatch(1, 2, "0", sitPlayer1, sitPlayer2, expPlayer1, expPlayer2);
                             }
 
                         }
