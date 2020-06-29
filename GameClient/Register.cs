@@ -94,6 +94,8 @@ namespace GameClient
 					SecurityText = txtSecretText.Text
 				});
 			}
+			this.Visible = false;
+			
 		}
 
 		public void Clear()

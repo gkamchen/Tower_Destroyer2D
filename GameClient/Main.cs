@@ -4,6 +4,8 @@ using GameClient.EventArgs;
 using GameClient;
 using System;
 using GameClient.Properties;
+using System.Drawing;
+using System.Runtime.InteropServices;
 
 namespace GameClient
 {
@@ -50,12 +52,17 @@ namespace GameClient
 		private Chat chat;
 
 		private delegate void SetVisibleMenuBarDelegate(bool visible);
+		private delegate void SetVisiblePanelDelegate(bool visible);
+		private delegate void SetVisibleBtnCloseDelegate(bool visible);
 
 		public Main()
 		{
 			InitializeComponent();
 			menuBar.Visible = false;
+			pnlMove.Visible = false;
+			this.btnClose.Visible = false;
 			this.BackgroundImage = Resources.Fundo_Red_Blue;
+			this.BackColor = Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(35)))), ((int)(((byte)(80)))));
 		}
 		protected override void OnClosed(System.EventArgs e)
 		{
@@ -78,6 +85,37 @@ namespace GameClient
 			else
 			{
 				this.menuBar.Visible = visible;
+
+			}
+		}
+		public void SetVisibleBtnClose(bool visible)
+		{
+			if (this.InvokeRequired == true)
+			{
+				this.Invoke(new SetVisibleBtnCloseDelegate(SetVisibleBtnClose), new object[]
+				{
+					visible
+				});
+			}
+			else
+			{
+				this.btnClose.Visible = visible;
+
+			}
+		}
+		public void SetVisiblePanel(bool visible)
+		{
+			if (this.InvokeRequired == true)
+			{
+				this.Invoke(new SetVisiblePanelDelegate(SetVisiblePanel), new object[]
+				{
+					visible
+				});
+			}
+			else
+			{
+				this.pnlMove.Visible = visible;
+
 			}
 		}
 		private void Main_Load(object sender, System.EventArgs e)
@@ -195,7 +233,6 @@ namespace GameClient
 							password = btnUpdatePasswordOnClickEventArgs.Password
 						});
 					}
-
 				}
 			}
 		}
@@ -273,6 +310,8 @@ namespace GameClient
 							this.login.Clear();
 							this.login.SetVisible(false);
 							this.SetVisibleMenuBar(true);
+							this.SetVisiblePanel(true);
+							this.SetVisibleBtnClose(true);
 
 						}
 						break;
@@ -351,8 +390,44 @@ namespace GameClient
 			this.chat.SetVisible(false, this.name);
 			this.recovery.Visible = false;
 			this.menuBar.Visible = false;
+			this.pnlMove.Visible = false;
+			this.btnClose.Visible = false;
 			this.match.Visible = false;
 		}
 
-	}
+		public void Move(System.IntPtr handle)
+		{
+			ReleaseCapture();
+			SendMessage(handle, 0x112, 0xf012, 0);
+		}
+		[DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
+		private extern static void ReleaseCapture();
+		[DllImport("user32.DLL", EntryPoint = "SendMessage")]
+		private extern static void SendMessage(System.IntPtr hWnd, int wMsg, int wParam, int lParam);
+
+		private void pnlMove_MouseMove(object sender, MouseEventArgs e)
+        {
+			Move(this.Handle);
+		}
+
+        private void btnClose_Click(object sender, System.EventArgs e)
+        {
+			DialogResult resposta = MessageBox.Show("Deseja finalizar o Jogo?", "Finalizar", MessageBoxButtons.YesNo);
+
+			if (resposta == DialogResult.Yes)
+			{
+				this.Close();
+            }
+        }
+
+        private void sairDoJogoToolStripMenuItem_Click(object sender, System.EventArgs e)
+        {
+			DialogResult resposta = MessageBox.Show("Deseja finalizar o Jogo?", "Finalizar", MessageBoxButtons.YesNo);
+
+			if (resposta == DialogResult.Yes)
+			{
+				this.Close();
+			}
+		}
+    }
 }

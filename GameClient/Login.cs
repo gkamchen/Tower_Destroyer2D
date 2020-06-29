@@ -102,6 +102,9 @@ namespace GameClient
             }
         }
 
-
+        private void btnClose_Click(object sender, System.EventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }
