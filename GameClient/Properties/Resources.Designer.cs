@@ -173,9 +173,9 @@ namespace GameClient.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap Fundo_Red_Blue1 {
+        internal static System.Drawing.Bitmap FundoLogin {
             get {
-                object obj = ResourceManager.GetObject("Fundo_Red_Blue1", resourceCulture);
+                object obj = ResourceManager.GetObject("FundoLogin", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

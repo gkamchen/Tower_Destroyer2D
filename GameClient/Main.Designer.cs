@@ -48,7 +48,7 @@
             this.sairDoJogoToolStripMenuItem});
             this.menuBar.Location = new System.Drawing.Point(0, 0);
             this.menuBar.Name = "menuBar";
-            this.menuBar.Size = new System.Drawing.Size(1287, 31);
+            this.menuBar.Size = new System.Drawing.Size(1593, 31);
             this.menuBar.TabIndex = 0;
             this.menuBar.Text = "menuBar";
             // 
@@ -93,7 +93,7 @@
             this.pnlMove.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(35)))), ((int)(((byte)(80)))));
             this.pnlMove.Location = new System.Drawing.Point(329, 0);
             this.pnlMove.Name = "pnlMove";
-            this.pnlMove.Size = new System.Drawing.Size(913, 31);
+            this.pnlMove.Size = new System.Drawing.Size(885, 31);
             this.pnlMove.TabIndex = 1;
             this.pnlMove.MouseMove += new System.Windows.Forms.MouseEventHandler(this.pnlMove_MouseMove);
             // 
@@ -103,7 +103,7 @@
             this.btnClose.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.btnClose.FlatAppearance.BorderSize = 0;
             this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnClose.Location = new System.Drawing.Point(1248, -1);
+            this.btnClose.Location = new System.Drawing.Point(1220, 0);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(32, 32);
             this.btnClose.TabIndex = 3;
@@ -116,12 +116,11 @@
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(35)))), ((int)(((byte)(60)))));
             this.BackgroundImage = global::GameClient.Properties.Resources.Fundo_Red_Blue;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.ClientSize = new System.Drawing.Size(1287, 743);
+            this.ClientSize = new System.Drawing.Size(1593, 817);
             this.Controls.Add(this.btnClose);
             this.Controls.Add(this.pnlMove);
             this.Controls.Add(this.menuBar);
             this.DoubleBuffered = true;
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.MainMenuStrip = this.menuBar;
             this.Name = "Main";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

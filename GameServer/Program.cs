@@ -73,7 +73,7 @@ namespace GameServer
         }
         private static int[] InitializeArrayWithNoDuplicates(int start, int size)
         {
-            Random rand = new Random(start);
+            Random rand = new Random(Guid.NewGuid().GetHashCode());
 
             return Enumerable.Repeat<int>(0, size).Select((value, index) => new { i = index + start, rand = rand.Next() }).OrderBy(x => x.rand).Select(x => x.i).ToArray();
         }

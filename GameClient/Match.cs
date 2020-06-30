@@ -77,7 +77,7 @@ namespace GameClient
                 if (btn.Type == Type.Unidade)
                 {
                     this.myUnities--;
-                    if (this.myUnities == 0)
+                    if (this.myUnities == 35)
                     {
                         if (this.EndGame != null)
                         {

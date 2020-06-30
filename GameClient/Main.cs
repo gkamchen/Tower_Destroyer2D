@@ -6,6 +6,7 @@ using System;
 using GameClient.Properties;
 using System.Drawing;
 using System.Runtime.InteropServices;
+using System.ComponentModel;
 
 namespace GameClient
 {
@@ -429,5 +430,6 @@ namespace GameClient
 				this.Close();
 			}
 		}
-    }
+		protected override void OnClosing(CancelEventArgs e) => Close();
+	}
 }

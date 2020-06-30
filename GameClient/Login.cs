@@ -1,4 +1,6 @@
 ﻿using System;
+using System.ComponentModel;
+using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
 using GameClient.EventArgs;
@@ -16,7 +18,6 @@ namespace GameClient
         public Login(EventHandler BtnRegisterOnClick, EventHandler BtnLoginOnClick, EventHandler BtnRecoveryDataOnClick)
         {
             InitializeComponent();
-
             this.BtnRegisterOnClick = BtnRegisterOnClick;
             this.BtnLoginOnClick = BtnLoginOnClick;
             this.BtnRecoveryDataOnClick = BtnRecoveryDataOnClick;
@@ -104,7 +105,9 @@ namespace GameClient
 
         private void btnClose_Click(object sender, System.EventArgs e)
         {
-            Application.Exit();
+            this.Close();
+
         }
+        protected override void OnClosing(CancelEventArgs e) => Close();
     }
 }

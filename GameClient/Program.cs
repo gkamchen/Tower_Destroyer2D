@@ -16,8 +16,8 @@ namespace GameClient
 
 			Main main = new Main();
 
-			main.Width = Screen.PrimaryScreen.WorkingArea.Width;
-			main.Height = Screen.PrimaryScreen.WorkingArea.Height;
+			//main.Width = Screen.PrimaryScreen.WorkingArea.Width;
+			//main.Height = Screen.PrimaryScreen.WorkingArea.Height;
 
 			//main.WindowState = FormWindowState.Maximized;
 			main.IsMdiContainer = true;

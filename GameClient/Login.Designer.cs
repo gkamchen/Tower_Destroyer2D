@@ -1,4 +1,6 @@
-﻿namespace GameClient
+﻿using System.Drawing;
+
+namespace GameClient
 {
 	partial class Login
 	{
@@ -33,15 +35,16 @@
             this.txtPassword = new System.Windows.Forms.TextBox();
             this.lblPassword = new System.Windows.Forms.Label();
             this.lblSummaryError = new System.Windows.Forms.Label();
+            this.btnLogin = new System.Windows.Forms.Button();
             this.btnClose = new System.Windows.Forms.Button();
             this.btnRecoveryData = new System.Windows.Forms.Button();
             this.btnRegister = new System.Windows.Forms.Button();
-            this.btnLogin = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // lblLogin
             // 
             this.lblLogin.AutoSize = true;
+            this.lblLogin.BackColor = System.Drawing.Color.Transparent;
             this.lblLogin.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblLogin.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(145)))), ((int)(((byte)(0)))));
             this.lblLogin.Location = new System.Drawing.Point(12, 81);
@@ -72,6 +75,7 @@
             // lblPassword
             // 
             this.lblPassword.AutoSize = true;
+            this.lblPassword.BackColor = System.Drawing.Color.Transparent;
             this.lblPassword.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblPassword.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(145)))), ((int)(((byte)(0)))));
             this.lblPassword.Location = new System.Drawing.Point(12, 136);
@@ -90,8 +94,23 @@
             this.lblSummaryError.Size = new System.Drawing.Size(0, 23);
             this.lblSummaryError.TabIndex = 6;
             // 
+            // btnLogin
+            // 
+            this.btnLogin.BackColor = System.Drawing.Color.Transparent;
+            this.btnLogin.BackgroundImage = global::GameClient.Properties.Resources.Login_32;
+            this.btnLogin.FlatAppearance.BorderSize = 0;
+            this.btnLogin.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.btnLogin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnLogin.Location = new System.Drawing.Point(242, 189);
+            this.btnLogin.Name = "btnLogin";
+            this.btnLogin.Size = new System.Drawing.Size(32, 32);
+            this.btnLogin.TabIndex = 3;
+            this.btnLogin.UseVisualStyleBackColor = false;
+            this.btnLogin.Click += new System.EventHandler(this.btnLogin_Click);
+            // 
             // btnClose
             // 
+            this.btnClose.BackColor = System.Drawing.Color.Transparent;
             this.btnClose.BackgroundImage = global::GameClient.Properties.Resources.Logoff_32;
             this.btnClose.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.btnClose.DialogResult = System.Windows.Forms.DialogResult.Cancel;
@@ -102,11 +121,12 @@
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(32, 32);
             this.btnClose.TabIndex = 7;
-            this.btnClose.UseVisualStyleBackColor = true;
+            this.btnClose.UseVisualStyleBackColor = false;
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
             // btnRecoveryData
             // 
+            this.btnRecoveryData.BackColor = System.Drawing.Color.Transparent;
             this.btnRecoveryData.BackgroundImage = global::GameClient.Properties.Resources.Recovery_32;
             this.btnRecoveryData.FlatAppearance.BorderSize = 0;
             this.btnRecoveryData.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
@@ -115,11 +135,12 @@
             this.btnRecoveryData.Name = "btnRecoveryData";
             this.btnRecoveryData.Size = new System.Drawing.Size(32, 32);
             this.btnRecoveryData.TabIndex = 5;
-            this.btnRecoveryData.UseVisualStyleBackColor = true;
+            this.btnRecoveryData.UseVisualStyleBackColor = false;
             this.btnRecoveryData.Click += new System.EventHandler(this.btnRecoveryData_Click);
             // 
             // btnRegister
             // 
+            this.btnRegister.BackColor = System.Drawing.Color.Transparent;
             this.btnRegister.BackgroundImage = global::GameClient.Properties.Resources.Add_32;
             this.btnRegister.FlatAppearance.BorderSize = 0;
             this.btnRegister.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
@@ -128,21 +149,8 @@
             this.btnRegister.Name = "btnRegister";
             this.btnRegister.Size = new System.Drawing.Size(32, 32);
             this.btnRegister.TabIndex = 4;
-            this.btnRegister.UseVisualStyleBackColor = true;
+            this.btnRegister.UseVisualStyleBackColor = false;
             this.btnRegister.Click += new System.EventHandler(this.btnRegister_Click);
-            // 
-            // btnLogin
-            // 
-            this.btnLogin.BackgroundImage = global::GameClient.Properties.Resources.Login_32;
-            this.btnLogin.FlatAppearance.BorderSize = 0;
-            this.btnLogin.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.btnLogin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnLogin.Location = new System.Drawing.Point(242, 189);
-            this.btnLogin.Name = "btnLogin";
-            this.btnLogin.Size = new System.Drawing.Size(32, 32);
-            this.btnLogin.TabIndex = 3;
-            this.btnLogin.UseVisualStyleBackColor = true;
-            this.btnLogin.Click += new System.EventHandler(this.btnLogin_Click);
             // 
             // Login
             // 
@@ -150,7 +158,9 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(35)))), ((int)(((byte)(80)))));
+            this.BackColor = System.Drawing.Color.Black;
+            this.BackgroundImage = global::GameClient.Properties.Resources.FundoLogin;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.CancelButton = this.btnClose;
             this.ClientSize = new System.Drawing.Size(286, 238);
             this.Controls.Add(this.btnClose);
@@ -162,14 +172,18 @@
             this.Controls.Add(this.btnLogin);
             this.Controls.Add(this.txtLogin);
             this.Controls.Add(this.lblLogin);
+            this.DoubleBuffered = true;
+            this.ForeColor = System.Drawing.SystemColors.ControlText;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Login";
+            this.Opacity = 0D;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Login";
+            this.TransparencyKey = System.Drawing.Color.Red;
             this.ResumeLayout(false);
             this.PerformLayout();
 
-		}
+        }
 
 		#endregion
 
