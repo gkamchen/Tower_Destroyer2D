@@ -18,6 +18,7 @@ namespace GameClient
         public Login(EventHandler BtnRegisterOnClick, EventHandler BtnLoginOnClick, EventHandler BtnRecoveryDataOnClick)
         {
             InitializeComponent();
+            this.BackColor = Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(35)))), ((int)(((byte)(80)))));
             this.BtnRegisterOnClick = BtnRegisterOnClick;
             this.BtnLoginOnClick = BtnLoginOnClick;
             this.BtnRecoveryDataOnClick = BtnRecoveryDataOnClick;

@@ -775,22 +775,20 @@ namespace GameServer
                                     isWinner = isWinner
                                 });
                             }
-                            if (client.GetNumber() % 2 == 1)
+
+                            if (isWinner == 1)
                             {
-                                if (isWinner == 1)
-                                {
-                                    sitPlayer1 = 'S';
-                                    expPlayer1 = 100;
-                                    expPlayer2 = 20;
-                                }
-                                else
-                                {
-                                    sitPlayer2 = 'S';
-                                    expPlayer1 = 20;
-                                    expPlayer2 = 100;
-                                }
-                                EndMatch(1, 2, "0", sitPlayer1, sitPlayer2, expPlayer1, expPlayer2);
+                                sitPlayer1 = 'S';
+                                expPlayer1 = 100;
+                                expPlayer2 = 20;
                             }
+                            else
+                            {
+                                sitPlayer2 = 'S';
+                                expPlayer1 = 20;
+                                expPlayer2 = 100;
+                            }
+                            EndMatch(1, 2, "0", sitPlayer1, sitPlayer2, expPlayer1, expPlayer2);
 
                         }
                         break;

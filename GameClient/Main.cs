@@ -60,8 +60,6 @@ namespace GameClient
 		{
 			InitializeComponent();
 			menuBar.Visible = false;
-			pnlMove.Visible = false;
-			this.btnClose.Visible = false;
 			this.BackgroundImage = Resources.Fundo_Red_Blue;
 			this.BackColor = Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(35)))), ((int)(((byte)(80)))));
 		}
@@ -86,36 +84,6 @@ namespace GameClient
 			else
 			{
 				this.menuBar.Visible = visible;
-
-			}
-		}
-		public void SetVisibleBtnClose(bool visible)
-		{
-			if (this.InvokeRequired == true)
-			{
-				this.Invoke(new SetVisibleBtnCloseDelegate(SetVisibleBtnClose), new object[]
-				{
-					visible
-				});
-			}
-			else
-			{
-				this.btnClose.Visible = visible;
-
-			}
-		}
-		public void SetVisiblePanel(bool visible)
-		{
-			if (this.InvokeRequired == true)
-			{
-				this.Invoke(new SetVisiblePanelDelegate(SetVisiblePanel), new object[]
-				{
-					visible
-				});
-			}
-			else
-			{
-				this.pnlMove.Visible = visible;
 
 			}
 		}
@@ -311,8 +279,6 @@ namespace GameClient
 							this.login.Clear();
 							this.login.SetVisible(false);
 							this.SetVisibleMenuBar(true);
-							this.SetVisiblePanel(true);
-							this.SetVisibleBtnClose(true);
 
 						}
 						break;
@@ -342,7 +308,7 @@ namespace GameClient
 					case MESSAGE_TYPE_MATCH_DATA_SUCCESS:
 						if (this.match != null)
 						{
-							this.match.InitializeMatrix(message.GetSingleDimArrayInt32("data"), message.GetInt32("isFirst"));
+							this.match.InitializeMatrix(message.GetSingleDimArrayInt32("data"), message.GetInt32("isFirst"), this.userId);
 						}
 						break;
 					case MESSAGE_TYPE_MATCH_DATA_WAITING:
@@ -391,8 +357,6 @@ namespace GameClient
 			this.chat.SetVisible(false, this.name);
 			this.recovery.Visible = false;
 			this.menuBar.Visible = false;
-			this.pnlMove.Visible = false;
-			this.btnClose.Visible = false;
 			this.match.Visible = false;
 		}
 

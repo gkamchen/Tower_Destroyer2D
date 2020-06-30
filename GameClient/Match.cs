@@ -18,7 +18,7 @@ namespace GameClient
         private delegate void SetVisibleDelegate(bool visible);
         private delegate void WaitPlayerDelegate();
         private delegate void ShowMyButtonEnemyClickDelegate(int line, int column);
-        private delegate void InitializeMatrixDelegate(int[] itens, int isFirst);
+        private delegate void InitializeMatrixDelegate(int[] itens, int isFirst, int idPlayer);
         private delegate void EndGameDelegate(int myUnities, int enemyUnities, int isWinner);
         private event EventHandler EndGame;
         private event EventHandler EnemyAttack;
@@ -133,7 +133,7 @@ namespace GameClient
         }
 
 
-        public void InitializeMatrix(int[] itens, int isFirst)
+        public void InitializeMatrix(int[] itens, int isFirst, int idPlayer)
         {
             if (this.InvokeRequired == true)
             {
