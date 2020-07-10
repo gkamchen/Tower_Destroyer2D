@@ -46,7 +46,7 @@
             this.sairDoJogoToolStripMenuItem});
             this.menuBar.Location = new System.Drawing.Point(0, 0);
             this.menuBar.Name = "menuBar";
-            this.menuBar.Size = new System.Drawing.Size(1349, 31);
+            this.menuBar.Size = new System.Drawing.Size(1384, 31);
             this.menuBar.TabIndex = 0;
             this.menuBar.Text = "menuBar";
             // 
@@ -88,17 +88,18 @@
             // 
             // Main
             // 
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(35)))), ((int)(((byte)(60)))));
             this.BackgroundImage = global::GameClient.Properties.Resources.Fundo_Red_Blue;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.ClientSize = new System.Drawing.Size(1349, 716);
+            this.ClientSize = new System.Drawing.Size(1384, 793);
             this.Controls.Add(this.menuBar);
             this.DoubleBuffered = true;
             this.MainMenuStrip = this.menuBar;
             this.Name = "Main";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Main";
+            this.Text = "Tower Destroyer 2D";
             this.Load += new System.EventHandler(this.Main_Load);
             this.menuBar.ResumeLayout(false);
             this.menuBar.PerformLayout();

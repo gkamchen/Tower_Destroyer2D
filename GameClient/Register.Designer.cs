@@ -155,7 +155,7 @@
             this.txtSecretText.Location = new System.Drawing.Point(12, 270);
             this.txtSecretText.Name = "txtSecretText";
             this.txtSecretText.Size = new System.Drawing.Size(211, 26);
-            this.txtSecretText.TabIndex = 5;
+            this.txtSecretText.TabIndex = 4;
             // 
             // txtBirthDate
             // 
@@ -165,12 +165,13 @@
             this.txtBirthDate.Mask = "00/00/0000";
             this.txtBirthDate.Name = "txtBirthDate";
             this.txtBirthDate.Size = new System.Drawing.Size(169, 26);
-            this.txtBirthDate.TabIndex = 4;
+            this.txtBirthDate.TabIndex = 5;
             this.txtBirthDate.ValidatingType = typeof(System.DateTime);
             // 
             // btnCancel
             // 
             this.btnCancel.BackgroundImage = global::GameClient.Properties.Resources.Close_321;
+            this.btnCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btnCancel.FlatAppearance.BorderSize = 0;
             this.btnCancel.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
             this.btnCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -197,9 +198,11 @@
             // 
             // Register
             // 
+            this.AcceptButton = this.btnSave;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(35)))), ((int)(((byte)(80)))));
+            this.CancelButton = this.btnCancel;
             this.ClientSize = new System.Drawing.Size(240, 368);
             this.Controls.Add(this.txtBirthDate);
             this.Controls.Add(this.txtSecretText);

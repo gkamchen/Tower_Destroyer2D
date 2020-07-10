@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Runtime.CompilerServices;
@@ -442,22 +443,23 @@ namespace GameServer
                     if (idMatch != null)
                     {
                         int idMatchNew = (int)idMatch;
+                        int idMatchNew2 = (int)idMatch;
                         command.CommandText = @"
-						INSERT plyerMatch (idPlayer, idMatch, expPlayer, winner) VALUES
-						(@idPlayer1, @idMatch, @expPlayer1, @sitPlayer1);
+						INSERT plyerMatch (idPlayer, idMatch, expPlayer, winner,item) VALUES
+						(@idPlayer1, @idMatchNew, @expPlayer1, @sitPlayer1, 1);
 
-                        INSERT plyerMatch (idPlayer, idMatch, expPlayer, winner) VALUES
-						(@idPlayer2, @idMatch, @expPlayer2, @sitPlayer2);";
+                        INSERT plyerMatch (idPlayer, idMatch, expPlayer, winner,item) VALUES
+						(@idPlayer2, @idMatchNew2, @expPlayer2, @sitPlayer2, 1);";
+
+                        command.Parameters.Add("idPlayer1", SqlDbType.Int).Value = idPlayer1;
+                        command.Parameters.Add(new SqlParameter("@idMatchNew", idMatchNew));
+                        command.Parameters.Add(new SqlParameter("@expPlayer1", expPlayer1));
+                        command.Parameters.Add(new SqlParameter("@sitPlayer1", sitPlayer1));
 
                         command.Parameters.Clear();
 
-                        command.Parameters.Add(new SqlParameter("idPlayer1", idPlayer1));
-                        command.Parameters.Add(new SqlParameter("idMatch", idMatchNew));
-                        command.Parameters.Add(new SqlParameter("expPlayer1", expPlayer1));
-                        command.Parameters.Add(new SqlParameter("sitPlayer1", sitPlayer1));
-
                         command.Parameters.Add(new SqlParameter("idPlayer2", idPlayer2));
-                        command.Parameters.Add(new SqlParameter("idMatch", idMatchNew));
+                        command.Parameters.Add(new SqlParameter("idMatchNew2", idMatchNew2));
                         command.Parameters.Add(new SqlParameter("expPlayer2", expPlayer2));
                         command.Parameters.Add(new SqlParameter("sitPlayer2", sitPlayer2));
 

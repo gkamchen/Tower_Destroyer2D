@@ -55,7 +55,7 @@ namespace GameClient
             }
             else
             {
-                //MessageBox.Show("Aguardando outro jogador, ao encontrar, a partida será iniciada!");
+                MessageBox.Show("Aguardando outro jogador, ao encontrar, a partida será iniciada!");
             }
         }
         public void ShowMyButtonEnemyClick(int line, int column)
@@ -140,7 +140,8 @@ namespace GameClient
                 this.Invoke(new InitializeMatrixDelegate(InitializeMatrix), new object[]
                 {
                     itens,
-                    isFirst
+                    isFirst,
+                    idPlayer
                 });
             }
             else
@@ -400,7 +401,7 @@ namespace GameClient
         }
         private void btnClose_Click(object sender, System.EventArgs e)
         {
-            DialogResult resposta = MessageBox.Show("Você deseja realmente dar uma de cagão e desistir da partida?", "Surrender", MessageBoxButtons.YesNo);
+            DialogResult resposta = MessageBox.Show("Você deseja realmente hastear bandeira branca e desistir da partida?", "Surrender", MessageBoxButtons.YesNo);
 
             if (resposta == DialogResult.Yes)
             {

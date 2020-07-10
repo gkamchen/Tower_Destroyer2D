@@ -34,14 +34,14 @@
             this.label2 = new System.Windows.Forms.Label();
             this.lblDiv2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.lblMyUnities = new System.Windows.Forms.Label();
+            this.lblEnemyUnities = new System.Windows.Forms.Label();
             this.pbUnityBottom = new System.Windows.Forms.PictureBox();
             this.pbUnityTop = new System.Windows.Forms.PictureBox();
             this.pbFlagTeamBottom = new System.Windows.Forms.PictureBox();
             this.pbTeamTurn = new System.Windows.Forms.PictureBox();
             this.pbFlagTeamTop = new System.Windows.Forms.PictureBox();
             this.btnClose = new System.Windows.Forms.Button();
-            this.lblMyUnities = new System.Windows.Forms.Label();
-            this.lblEnemyUnities = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pbUnityBottom)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbUnityTop)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbFlagTeamBottom)).BeginInit();
@@ -101,6 +101,26 @@
             this.label1.Size = new System.Drawing.Size(114, 3);
             this.label1.TabIndex = 10;
             // 
+            // lblMyUnities
+            // 
+            this.lblMyUnities.AutoSize = true;
+            this.lblMyUnities.Font = new System.Drawing.Font("Comic Sans MS", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblMyUnities.Location = new System.Drawing.Point(1259, 597);
+            this.lblMyUnities.Name = "lblMyUnities";
+            this.lblMyUnities.Size = new System.Drawing.Size(76, 21);
+            this.lblMyUnities.TabIndex = 18;
+            this.lblMyUnities.Text = "Restam: ";
+            // 
+            // lblEnemyUnities
+            // 
+            this.lblEnemyUnities.AutoSize = true;
+            this.lblEnemyUnities.Font = new System.Drawing.Font("Comic Sans MS", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblEnemyUnities.Location = new System.Drawing.Point(1259, 221);
+            this.lblEnemyUnities.Name = "lblEnemyUnities";
+            this.lblEnemyUnities.Size = new System.Drawing.Size(76, 21);
+            this.lblEnemyUnities.TabIndex = 19;
+            this.lblEnemyUnities.Text = "Restam: ";
+            // 
             // pbUnityBottom
             // 
             this.pbUnityBottom.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
@@ -147,7 +167,7 @@
             // btnClose
             // 
             this.btnClose.BackColor = System.Drawing.Color.Transparent;
-            this.btnClose.BackgroundImage = global::GameClient.Properties.Resources.Arregar_50;
+            this.btnClose.BackgroundImage = global::GameClient.Properties.Resources.Barco;
             this.btnClose.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.btnClose.FlatAppearance.BorderSize = 0;
             this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -159,32 +179,12 @@
             this.btnClose.Visible = false;
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
-            // lblMyUnities
-            // 
-            this.lblMyUnities.AutoSize = true;
-            this.lblMyUnities.Font = new System.Drawing.Font("Comic Sans MS", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblMyUnities.Location = new System.Drawing.Point(1259, 597);
-            this.lblMyUnities.Name = "lblMyUnities";
-            this.lblMyUnities.Size = new System.Drawing.Size(76, 21);
-            this.lblMyUnities.TabIndex = 18;
-            this.lblMyUnities.Text = "Restam: ";
-            // 
-            // lblEnemyUnities
-            // 
-            this.lblEnemyUnities.AutoSize = true;
-            this.lblEnemyUnities.Font = new System.Drawing.Font("Comic Sans MS", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblEnemyUnities.Location = new System.Drawing.Point(1259, 221);
-            this.lblEnemyUnities.Name = "lblEnemyUnities";
-            this.lblEnemyUnities.Size = new System.Drawing.Size(76, 21);
-            this.lblEnemyUnities.TabIndex = 19;
-            this.lblEnemyUnities.Text = "Restam: ";
-            // 
             // Match
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(185)))), ((int)(((byte)(135)))), ((int)(((byte)(80)))));
-            this.ClientSize = new System.Drawing.Size(1361, 750);
+            this.ClientSize = new System.Drawing.Size(1368, 751);
             this.Controls.Add(this.lblEnemyUnities);
             this.Controls.Add(this.lblMyUnities);
             this.Controls.Add(this.pbUnityBottom);

@@ -95,7 +95,7 @@ namespace GameClient
 		{
 			try
 			{
-				this.client = new Client("127.0.0.1", 5000);
+				this.client = new Client("192.168.0.107", 5000);
 
 				this.client.Connect(this.OnReceiveMessage);
 
@@ -201,9 +201,12 @@ namespace GameClient
 							idPlayer = btnUpdatePasswordOnClickEventArgs.IdPlayer,
 							password = btnUpdatePasswordOnClickEventArgs.Password
 						});
+						recovery.Visible = false;
+						login.Visible = true;
 					}
 				}
 			}
+
 		}
 		private void BtnCancelOnClick(object sender, System.EventArgs eventArgs)
 		{
@@ -228,6 +231,7 @@ namespace GameClient
 
 				});
 			}
+			login.Visible = true;
 		}
 		private void BtnSendOnClick(object sender, System.EventArgs eventArgs)
 		{
